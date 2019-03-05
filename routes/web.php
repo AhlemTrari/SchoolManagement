@@ -11,6 +11,14 @@
 |
 */
 
+Route::get('import-export-csv-excel',array('as'=>'excel.import','uses'=>'FileController@importExportExcelORCSV'));
+Route::post('import-csv-excel',array('as'=>'import-csv-excel','uses'=>'FileController@importFileIntoDB'));
+Route::get('download-excel-file/{type}', array('as'=>'excel-file','uses'=>'FileController@downloadExcelFile'));
+
+Route::view('test','file_import_export');
+
+Route::view('admin','layouts.admin');
+
 Route::get('/', function () {
     return view('welcome');
 });
