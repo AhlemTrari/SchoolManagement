@@ -22,11 +22,3 @@ Route::view('admin','layouts.admin');
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/login1', function () {
-    return view('auth.login1');
-});
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
