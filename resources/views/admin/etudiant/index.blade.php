@@ -22,10 +22,10 @@
 
 				<div class="edit-my-poll-head bg-primary">
 					<div class="head-content">
-						<h2 class="title">Nouvel enseignant</h2>
+						<h2 class="title">Nouvel étudiant</h2>
 					</div>
 
-					<img class="poll-img" style = "width: 20%" src="{{asset('assets/avatars/profaj.png')}}" alt="screen">
+					<img class="poll-img" style = "width: 20%" src="{{asset('assets/avatars/etdaj.png')}}" alt="screen">
 				</div>
 
 				<div class="edit-my-poll-content">
@@ -55,30 +55,18 @@
 								<div class="form-group label-floating is-empty">
 											<label class="control-label">Mot de passe</label>
 											<input class="form-control" type="password">
+								</div>
+								<br>
+								<div class="form-group label-floating is-empty">
+									<div class="row">
+										<div class="col col-lg-6 col-sm-12 col-12">
+											<a href="#" class="btn btn-secondary btn-md full-width">Annuler</a>
 										</div>
-								<div class="form-group label-floating is-empty">
-									<label class="control-label">Numéro de téléphone</label>
-									<input class="form-control" type="text">
-								</div>
-								<div class="form-group label-floating is-empty">
-									<center>
-									<div style="width: 50%" class="file-upload">
-										<label for="upload" class="file-upload__label">Upload photo</label>
-										<input id="upload" class="file-upload__input" type="file" name="file-upload">
+
+										<div class="col col-lg-6 col-sm-12 col-12">
+											<a href="#" class="btn btn-primary btn-md full-width">Valider</a>
+										</div>
 									</div>
-									</center>
-									<br><br>
-								<div class="row">
-								<div class="col col-lg-6 col-sm-12 col-12">
-									<a href="#" class="btn btn-secondary btn-md full-width">Annuler</a>
-								</div>
-
-								<div class="col col-lg-6 col-sm-12 col-12">
-									<a href="#" class="btn btn-primary btn-md full-width">Valider</a>
-								</div>
-								</div>
-
-									
 								</div>
 							</div>
 						</div>
