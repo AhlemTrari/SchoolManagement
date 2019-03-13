@@ -22,6 +22,9 @@ Route::get('ExportProfs','EnseignantController@ExportProfs');
 //<!-- end test -->
 
 Route::view('admin','layouts.admin');
+Route::view('index','admin.prof.indexx');
+Route::view('admin/etudiant/index','admin.etudiant.index');
+
 
 Route::view('test','admin.prof.index');
 
