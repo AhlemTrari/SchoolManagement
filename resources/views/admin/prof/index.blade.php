@@ -1,19 +1,43 @@
 @extends('layouts.datatable')
 @section('content')
 
-            <div class="container">
-				<div class="row">
-                    <div class="col-12">
-                        		<div class="row float-right">
-                        			<div class="col-md-4">
-	                        			<div class="dt-buttons btn-group"> 
-	                        				<a href="{{url('ExportProfs')}}" class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="datatable-buttons" type="button"><span>export</span></a> 
-	                        				<button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="datatable-buttons" type="button"><span>import</span></button>
-	                        			</div>
-                        			</div>
-                        		</div>
-
-                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
+    <div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<a href="#" class="btn btn-lg full-width bg-blue">Exporter en fichier excel<div class="ripple-container"></div></a>
+			</div>
+			<div class="col-md-4">
+				<a href="#" class="btn btn-green btn-lg full-width btn-icon-left">Importer un fichier excel<div class="ripple-container"></div></a>
+			</div>
+			<div class="col-md-4">
+				<a href="#" class="btn btn-secondary btn-lg full-width" data-toggle="modal" data-target="#faqs-popup">Ajouter enseignant<div class="ripple-container"></div></a>
+			</div>
+		</div>
+		<div class="row">
+            <div class="col-12">
+				<table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Dépaterement</th>
+                            <th>Email</th>
+                            <th>N° de téléphone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	@foreach($profs as $prof)
+                        <tr>
+                            <td>{{$prof->nom}}</td>
+                            <td>{{$prof->prenom}}</td>
+                            <td>{{$prof->dep}}</td>
+                            <td>{{$prof->email}}</td>
+                            <td>{{$prof->tel}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                            <!-- <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
 
                                 <thead>
                                     <tr>
@@ -452,10 +476,9 @@
                                     <td>$112,000</td>
                                 </tr>
                                 </tbody>
-                            </table>
-                        </div>
-                <!-- end row -->
+                            </table> -->
             </div>
+                <!-- end row -->
         </div>
-
+    </div>
 @endsection
