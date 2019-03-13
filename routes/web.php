@@ -18,6 +18,7 @@ Route::get('download-excel-file/{type}', array('as'=>'excel-file','uses'=>'FileC
 Route::view('test','file_import_export');
 
 Route::view('admin','layouts.admin');
+Route::view('index','admin.prof.index');
 
 Route::get('/', function () {
     return view('welcome');

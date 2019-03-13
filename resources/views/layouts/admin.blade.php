@@ -255,7 +255,7 @@
 <header class="header" id="site-header">
 
 	<div class="page-title">
-		<h6>Accueil</h6>
+		@yield('page-title')
 	</div>
 
 	<div class="header-content-wrapper">
@@ -644,20 +644,7 @@
 <!-- Main Header Groups -->
 
 <div class="main-header">
-	<div class="content-bg-wrap bg-group"></div>
-	<div class="container">
-		<div class="row">
-			<div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
-				<div class="main-header-content">
-					<h1>Stats and Analytics</h1>
-					<p>Welcome to your stats and analytics dashboard! Here you’l see all your profile stats like: visits,
-	 new friends, average comments, likes, social media reach, annual graphs, and much more!</p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<img class="img-bottom" src="{{asset('assets/img/group-bottom.png')}}" alt="friends">
+	@yield('main-header')
 </div>
 
 <!-- ... end Main Header Groups -->
