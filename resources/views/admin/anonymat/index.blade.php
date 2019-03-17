@@ -66,7 +66,7 @@
 						<h2 class="title">Nouvel agent anonymat</h2>
 					</div>
 
-					<img class="poll-img" style = "width: 20%" src="{{asset('assets/avatars/profaj.png')}}" alt="screen">
+					<img class="poll-img" style = "width: 20%" src="{{asset('assets/avatars/aaj.png')}}" alt="screen">
 				</div>
 
 				<div class="edit-my-poll-content">

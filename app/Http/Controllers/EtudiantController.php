@@ -54,8 +54,6 @@ class EtudiantController extends Controller
             $membre->date_naissance = $request->input('date_naissance');
             $membre->email = $request->input('email');
             $membre->password = Hash::make($request->input('password'));
-            $membre->grade = $request->input('filiere');
-            $membre->dept_id = $request->input('niveau');
             //$membre->photo = 'uploads/photo/'.$file_name;
             $membre->save();
             return redirect('admin/etudiant');

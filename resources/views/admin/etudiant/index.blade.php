@@ -31,8 +31,8 @@
                             <td>{{$etudiant->matricule}}</td>
                             <td>{{$etudiant->nom}}</td>
                             <td>{{$etudiant->prenom}}</td>
-                            <td>{{$etudiant->filiere}}</td>
-                            <td>{{$etudiant->niveau}}</td>
+                            <td><!-- {{$etudiant->filiere}} --></td>
+                            <td><!-- {{$etudiant->niveau}} --></td>
                         </tr>
                         @endforeach
                     </tbody>

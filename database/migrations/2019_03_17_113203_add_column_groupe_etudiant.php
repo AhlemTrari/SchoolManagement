@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnNiveauEtudiant extends Migration
+class AddColumnGroupeEtudiant extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,8 @@ class AddColumnNiveauEtudiant extends Migration
     public function up()
     {
         Schema::table('etudiants', function (Blueprint $table) {
-            $table-> string('niveau')->nullable()->after('filiere');
+            $table->integer('groupe_id')->nullable()->unsigned()->after('photo');
+            $table-> foreign('groupe_id')->references('id')->on('groupes')->onDelete('set null');
         });
     }
 
@@ -26,8 +27,8 @@ class AddColumnNiveauEtudiant extends Migration
     public function down()
     {
         Schema::table('etudiants', function (Blueprint $table) {
-            $table->dropColumn('niveau');
-            
+            $table->dropForeign(['groupe_id']);
+            $table->dropColumn('groupe_id');
         });
     }
 }

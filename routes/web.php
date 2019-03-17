@@ -11,6 +11,15 @@
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 // Route::get('import-export-csv-excel',array('as'=>'excel.import','uses'=>'FileController@importExportExcelORCSV'));
 // Route::post('import-csv-excel',array('as'=>'import-csv-excel','uses'=>'FileController@importFileIntoDB'));
 // Route::get('download-excel-file/{type}', array('as'=>'excel-file','uses'=>'FileController@downloadExcelFile'));
@@ -27,19 +36,34 @@ Route::view('admin/anonymat/index','admin.anonymat.index');
 Route::view('admin/etudiant/index','admin.etudiant.index');
 Route::get('/etudiant/', 'EtudiantController@index');
 
+//Profs CRUD
 
-Route::get('/anonymat/', 'AnonymatController@index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
-//
-Route::view('test','admin.prof.index');
+Route::get('admin/enseignant','EnseignantController@index');
+Route::get('admin/enseignant/create','EnseignantController@create');
+Route::post('admin/enseignant','EnseignantController@store');
+Route::get('admin/enseignant/{id}/details','EnseignantController@details');
+Route::get('admin/enseignant/{id}/edit','EnseignantController@edit');
+Route::put('admin/enseignant/{id}','EnseignantController@update');
+Route::delete('admin/enseignant/{id}','EnseignantController@destroy');
 
-Route::get('Enseignants','EnseignantController@index');
-Route::get('Enseignants/create','EnseignantController@create');
-Route::post('Enseignants','EnseignantController@store');
-Route::get('Enseignants/{id}/details','EnseignantController@details');
-Route::get('Enseignants/{id}/edit','EnseignantController@edit');
-Route::put('Enseignants/{id}','EnseignantController@update');
-Route::delete('Enseignants/{id}','EnseignantController@destroy');
+//Etudiant CRUD
+
+
+Route::get('admin/etudiant','EtudiantController@index');
+Route::get('admin/etudiant/create','EtudiantController@create');
+Route::post('admin/etudiant','EtudiantController@store');
+Route::get('admin/etudiant/{id}/details','EtudiantController@details');
+Route::get('admin/etudiant/{id}/edit','EtudiantController@edit');
+Route::put('admin/etudiant/{id}','EtudiantController@update');
+Route::delete('admin/etudiant/{id}','EtudiantController@destroy');
+
+//Agent CRUD
+
+Route::get('admin/anonymat','AnonymatController@index');
+Route::get('admin/anonymat/create','AnonymatController@create');
+Route::post('admin/anonymat','AnonymatController@store');
+Route::get('admin/anonymat/{id}/details','AnonymatController@details');
+Route::get('admin/anonymat/{id}/edit','AnonymatController@edit');
+Route::put('admin/anonymat/{id}','AnonymatController@update');
+Route::delete('admin/anonymat/{id}','AnonymatController@destroy');

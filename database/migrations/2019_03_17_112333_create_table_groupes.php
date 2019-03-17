@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnFiliereEtudiant extends Migration
+class CreateTableGroupes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddColumnFiliereEtudiant extends Migration
      */
     public function up()
     {
-        Schema::table('etudiants', function (Blueprint $table) {
-             $table-> string('filiere')->nullable()->after('password');
+        Schema::create('groupes', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nom')->nullable();
+            $table->string('filiere')->nullable();
+            $table->string('niveau')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddColumnFiliereEtudiant extends Migration
      */
     public function down()
     {
-        Schema::table('etudiants', function (Blueprint $table) {
-            $table->dropColumn('grade');
-        });
+        Schema::dropIfExists('groupes');
     }
 }
