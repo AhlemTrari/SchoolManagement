@@ -46,7 +46,8 @@
 			<!-- Login-Registration Form  -->
 			
 			<div class="registration-login-form">
-			
+                <form method="POST" action="{{ route('login') }}">
+				@csrf
 					<div class="container">
 						<div class="title h6">Login to your Account</div>
 						<form class="content">
@@ -54,22 +55,36 @@
 								<div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
 									<div class="form-group label-floating is-empty">
 										<label class="control-label">Your Email</label>
-										<input class="form-control" placeholder="" type="email">
+										<input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus placeholder="" type="email">
+										@if ($errors->has('email'))
+		                                    <span class="invalid-feedback" role="alert">
+		                                        <strong>{{ $errors->first('email') }}</strong>
+		                                    </span>
+		                                @endif
 									</div>
+
 									<div class="form-group label-floating is-empty">
 										<label class="control-label">Your Password</label>
-										<input class="form-control" placeholder="" type="password">
+										<input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="" type="password" name="password" required>
+
+										@if ($errors->has('password'))
+		                                    <span class="invalid-feedback" role="alert">
+		                                        <strong>{{ $errors->first('password') }}</strong>
+		                                    </span>
+		                                @endif
 									</div>
 			
 									<div class="remember">
 			
 										<div class="checkbox">
 											<label>
-												<input name="optionsCheckboxes" type="checkbox">
+												<input name="optionsCheckboxes" type="checkbox" {{ old('remember') ? 'checked' : '' }}>
 												Remember Me
 											</label>
 										</div>
+										@if (Route::has('password.request'))
 										<a href="#" class="forgot">Forgot my Password</a>
+										@endif
 									</div>
 			
 									<a href="#" class="btn btn-lg btn-primary full-width">Login</a>
@@ -80,9 +95,11 @@
 							</div>
 						</form>
 					</div>
-				</div>
+				</form>
 			</div>
+		</div>
 			
 			<!-- ... end Login-Registration Form  -->		
 	</div>
+</div>
 @endsection
