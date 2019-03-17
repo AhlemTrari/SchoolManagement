@@ -27,8 +27,18 @@ Route::view('admin/anonymat/index','admin.anonymat.index');
 Route::view('admin/etudiant/index','admin.etudiant.index');
 Route::get('/etudiant/', 'EtudiantController@index');
 
-Route::view('test','admin.prof.index');
+
 
 Route::get('/', function () {
     return view('welcome');
 });
+//
+Route::view('test','admin.prof.index');
+
+Route::get('Enseignants','EnseignantController@index');
+Route::get('Enseignants/create','EnseignantController@create');
+Route::post('Enseignants','EnseignantController@store');
+Route::get('Enseignants/{id}/details','EnseignantController@details');
+Route::get('Enseignants/{id}/edit','EnseignantController@edit');
+Route::put('Enseignants/{id}','EnseignantController@update');
+Route::delete('Enseignants/{id}','EnseignantController@destroy');
