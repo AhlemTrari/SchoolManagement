@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Etudiant;
+use App\Anonymat;
 
-class EtudiantController extends Controller
+class AnonymatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class EtudiantController extends Controller
      */
     public function index()
     {
-        $etudiants = Etudiant::all();
-         return view('admin.etudiant.index')->with([
-            'etudiants' => $etudiants,
+        $anonymats = Anonymat::all();
+         return view('admin.anonymat.index')->with([
+            'anonymats' => $anonymats,
             ]);
     }
 
@@ -48,17 +48,16 @@ class EtudiantController extends Controller
             $file_name="userDefault.png";
         }
 
-            $membre->nom = $request->input('matricule');
+            
             $membre->nom = $request->input('nom');
             $membre->prenom = $request->input('prenom');
+            $membre->photo = 'uploads/photo/'.$file_name;
             $membre->date_naissance = $request->input('date_naissance');
             $membre->email = $request->input('email');
             $membre->password = Hash::make($request->input('password'));
-            $membre->grade = $request->input('filiere');
-            $membre->dept_id = $request->input('niveau');
-            //$membre->photo = 'uploads/photo/'.$file_name;
+            $membre->num_tel = $request->input('num_tel');
             $membre->save();
-            return redirect('admin/etudiant');
+            return redirect('admin/anonymat');
     }
 
     /**

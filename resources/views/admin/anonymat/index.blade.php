@@ -1,9 +1,50 @@
-@extends('layouts.master')
+@extends('layouts.datatable')
 @section('content')
-<a data-toggle="modal" data-target="#edit-my-poll-popup" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+		<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<a href="#" class="btn btn-lg full-width bg-blue">Exporter en fichier excel<div class="ripple-container"></div></a>
+			</div>
+			<div class="col-md-4">
+				<a href="#" class="btn btn-green btn-lg full-width btn-icon-left">Importer un fichier excel<div class="ripple-container"></div></a>
+			</div>
+			<div class="col-md-4">
+				<a href="#" class="btn btn-secondary btn-lg full-width" data-toggle="modal" data-target="#nv_agent" href="#">Ajouter Agent anonymat<div class="ripple-container"></div></a>
+			</div>
+		</div>
+
+		<div class="row">
+            <div class="col-12">
+				<table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Email</th>
+                            <th>Numéro de téléphone</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	@foreach($anonymats as $anonymat)
+                        <tr>
+                            <td>{{$anonymat->nom}}</td>
+                            <td>{{$anonymat->prenom}}</td>
+                            <td>{{$anonymat->email}}</td>
+                            <td>{{$anonymat->num_tel}}</td>
+                        
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
 
 
-<div class="modal fade" id="edit-my-poll-popup" tabindex="-1" role="dialog" aria-labelledby="edit-my-poll-popup" aria-hidden="true">
+
+
+<div class="modal fade" id="nv_agent" tabindex="-1" role="dialog" aria-labelledby="edit-my-poll-popup" aria-hidden="true">
 	<div class="modal-dialog window-popup edit-my-poll-popup" role="document">
 		<div class="modal-content">
 			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
@@ -87,6 +128,6 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> 
 
 @endsection

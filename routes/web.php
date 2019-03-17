@@ -28,6 +28,7 @@ Route::view('admin/etudiant/index','admin.etudiant.index');
 Route::get('/etudiant/', 'EtudiantController@index');
 
 
+Route::get('/anonymat/', 'AnonymatController@index');
 
 Route::get('/', function () {
     return view('welcome');
