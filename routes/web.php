@@ -36,13 +36,13 @@ Route::view('admin/etudiant/index','admin.etudiant.index');
 
 //Profs CRUD
 
-Route::get('admin/enseignants','EnseignantController@index');
-Route::get('admin/enseignants/create','EnseignantController@create');
-Route::post('admin/enseignants','EnseignantController@store');
-Route::get('admin/enseignants/{id}/details','EnseignantController@details');
-Route::get('admin/enseignants/{id}/edit','EnseignantController@edit');
-Route::put('admin/enseignants/{id}','EnseignantController@update');
-Route::delete('admin/enseignants/{id}','EnseignantController@destroy');
+Route::get('admin/enseignant','EnseignantController@index');
+Route::get('admin/enseignant/create','EnseignantController@create');
+Route::post('admin/enseignant','EnseignantController@store');
+Route::get('admin/enseignant/{id}/details','EnseignantController@details');
+Route::get('admin/enseignant/{id}/edit','EnseignantController@edit');
+Route::put('admin/enseignant/{id}','EnseignantController@update');
+Route::delete('admin/enseignant/{id}','EnseignantController@destroy');
 
 //Etudiant CRUD
 
@@ -63,3 +63,13 @@ Route::get('admin/anonymat/{id}/details','AnonymatController@details');
 Route::get('admin/anonymat/{id}/edit','AnonymatController@edit');
 Route::put('admin/anonymat/{id}','AnonymatController@update');
 Route::delete('admin/anonymat/{id}','AnonymatController@destroy');
+
+//Groupe CRUD
+
+Route::get('admin/groupe','GroupeController@index');
+Route::get('admin/groupe/create','GroupeController@create');
+Route::post('admin/groupe','GroupeController@store');
+Route::get('admin/groupe/{id}/details','GroupeController@details');
+Route::get('admin/groupe/{id}/edit','GroupeController@edit');
+Route::put('admin/groupe/{id}','GroupeController@update');
+Route::delete('admin/groupe/{id}','GroupeController@destroy');
