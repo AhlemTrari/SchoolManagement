@@ -18,6 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+// multiAuth
+Route::get('/admin', 'AdminController@index');
+
+// Route::get('admin-login', 'Auth\AdminLoginController@showLoginForm');
+// Route::post('admin-login', ['as'=>'admin-login','uses'=>'Auth\AdminLoginController@login']);
 
 
 // Route::get('import-export-csv-excel',array('as'=>'excel.import','uses'=>'FileController@importExportExcelORCSV'));
@@ -30,10 +35,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('ExportProfs','EnseignantController@ExportProfs');
 //<!-- end test -->
 
-Route::view('admin','layouts.admin');
-Route::view('index','admin.prof.indexx');
-Route::view('admin/etudiant/index','admin.etudiant.index');
-
+// <!-- espaceAdmin -->
 //Profs CRUD
 
 Route::get('admin/enseignant','EnseignantController@index');
@@ -73,3 +75,8 @@ Route::get('admin/groupe/{id}/details','GroupeController@details');
 Route::get('admin/groupe/{id}/edit','GroupeController@edit');
 Route::put('admin/groupe/{id}','GroupeController@update');
 Route::delete('admin/groupe/{id}','GroupeController@destroy');
+
+// <!-- end espaceAdmin -->
+// <!-- espaceProf -->
+
+Route::view('prof','prof.accueil');

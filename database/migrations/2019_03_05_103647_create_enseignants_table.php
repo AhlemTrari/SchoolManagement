@@ -19,7 +19,8 @@ class CreateEnseignantsTable extends Migration
             $table->string('prenom')->nullable();
             $table->string('photo')->nullable();
             $table->date('date_naissance')->nullable();
-            $table->string('email')->nullable();
+            $table->string('email')->unique();
+            $table->rememberToken();
             $table->string('password')->nullable();
             $table->string('num_tel')->nullable();
             //$table->boolean('chef_matiere')->nullable()->default(false);

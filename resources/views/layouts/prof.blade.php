@@ -646,16 +646,9 @@
 <!-- ... end Responsive Header-BP -->
 <div class="header-spacer header-spacer-small"></div>
 
-
-<!-- Main Header Groups -->
-
-<div class="main-header">
-	@yield('main-header')
-</div>
-
 <!-- ... end Main Header Groups -->
 
-<div class="container">
+<div class="container" style="margin-top: 50px">
 	@yield('content')
 </div>
 

@@ -2,22 +2,22 @@
 
 namespace App;
 
-
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Enseignant extends Authenticatable
+
+class Admin extends Authenticatable
 {
- use Notifiable;
-    protected $guard = 'enseignant';
+    use Notifiable;
+    protected $guard = 'admin';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['email', 'nom', 'prenom','photo' , 'password','date_naissance','num_tel'];
+    protected $fillable = ['email', 'nom', 'prenom', 'password','date_naissance','num_tel'];
 
     /**
      * The attributes that should be hidden for arrays.

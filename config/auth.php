@@ -46,6 +46,42 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'api-admin' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+        ],
+
+        'etudiant' => [
+            'driver' => 'session',
+            'provider' => 'entreprises',
+        ],
+
+        'etudiant-api' => [
+            'driver' => 'token',
+            'provider' => 'entreprises',
+        ],
+        'enseigant' => [
+            'driver' => 'session',
+            'provider' => 'enseigants',
+        ],
+        'enseigant-api' => [
+            'driver' => 'token',
+            'provider' => 'enseigants',
+        ],
+        'anonymat' => [
+            'driver' => 'session',
+            'provider' => 'anonymats',
+        ],
+        'anonymat-api' => [
+            'driver' => 'token',
+            'provider' => 'anonymats',
+        ],
     ],
 
     /*
@@ -69,6 +105,22 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
+        ],
+        'enseigants' => [
+            'driver' => 'eloquent',
+            'model' => App\Enseigant::class,
+        ],
+        'etudiants' => [
+            'driver' => 'eloquent',
+            'model' => App\Etudiant::class,
+        ],
+        'anonymats' => [
+            'driver' => 'eloquent',
+            'model' => App\Anonymat::class,
         ],
 
         // 'users' => [
@@ -95,6 +147,27 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        'etudiants' => [
+            'provider' => 'etudiants',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'enseigants' => [
+            'provider' => 'enseigants',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'anonymats' => [
+            'provider' => 'anonymats',
             'table' => 'password_resets',
             'expire' => 60,
         ],

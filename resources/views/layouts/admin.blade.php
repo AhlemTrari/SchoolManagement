@@ -255,7 +255,7 @@
 <header class="header" id="site-header">
 
 	<div class="page-title">
-		@yield('page-title')
+		<h6>@yield('page-title')</h6>
 	</div>
 
 	<div class="header-content-wrapper">
