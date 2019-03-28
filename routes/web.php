@@ -35,7 +35,10 @@ Route::get('/admin', 'AdminController@index');
 Route::get('ExportProfs','EnseignantController@ExportProfs');
 //<!-- end test -->
 
+
 // <!-- espaceAdmin -->
+
+
 //Profs CRUD
 
 Route::get('admin/enseignant','EnseignantController@index');
@@ -47,6 +50,7 @@ Route::put('admin/enseignant/{id}','EnseignantController@update');
 Route::delete('admin/enseignant/{id}','EnseignantController@destroy');
 
 //Etudiant CRUD
+
 
 Route::get('admin/etudiant','EtudiantController@index');
 Route::get('admin/etudiant/create','EtudiantController@create');

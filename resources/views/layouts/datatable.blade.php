@@ -109,7 +109,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="03-Newsfeed.html">
+					<a href="{{url('admin/etudiant')}}">
 						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon')}}"></use></svg>
 						<span class="left-menu-title">Etudiants</span>
 					</a>
@@ -121,13 +121,13 @@
 					</a>
 				</li>
 				<li>
-					<a href="16-FavPagesFeed.html">
+					<a href="{{url('admin/enseignant')}}">
 						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-star-icon')}}"></use></svg>
 						<span class="left-menu-title">Enseignants</span>
 					</a>
 				</li>
 				<li>
-					<a href="17-FriendGroups.html">
+					<a href="{{url('admin/anonymat')}}">
 						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon')}}"></use></svg>
 						<span class="left-menu-title">Agents anonymat</span>
 					</a>
