@@ -17,9 +17,41 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/home');
-        }
+        // if (Auth::guard($guard)->check()) {
+        //     return redirect('/home');
+        // }
+
+        switch ($guard) {
+        case 'admin':
+          if (Auth::guard($guard)->check()) {
+            return redirect()->route('admin.dash');
+          }
+          break;
+
+        case 'enseignant':
+          if (Auth::guard($guard)->check()) {
+            return redirect()->route('enseignant.dash');
+          }
+          break;
+
+        case 'etudiant':
+          if (Auth::guard($guard)->check()) {
+            return redirect()->route('etudiant.dash');
+          }
+          break;
+
+        case 'anonymat':
+          if (Auth::guard($guard)->check()) {
+            return redirect()->route('anonymat.dash');
+          }
+          break;
+
+        default:
+          if (Auth::guard($guard)->check()) {
+              return redirect('/home');
+          }
+          break;
+      }
 
         return $next($request);
     }

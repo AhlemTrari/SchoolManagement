@@ -242,11 +242,15 @@
 				</li>
 				
 				<li>
-					<a href="#">
+					<a href="{{ route('admin/logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
 						<svg class="olymp-logout-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
 
 						<span>Se déconnecter</span>
 					</a>
+					<form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
 				</li>
 			</ul>
 

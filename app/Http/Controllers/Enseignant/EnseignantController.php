@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Enseignant;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class AdminController extends Controller
+class EnseignantController extends Controller
 {
-     /**
+    /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+   public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('auth:enseignant');
     }
 
     /**
@@ -23,6 +24,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('layouts.admin');
+        return view('prof.accueil');
     }
 }

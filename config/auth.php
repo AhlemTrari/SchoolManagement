@@ -59,20 +59,20 @@ return [
 
         'etudiant' => [
             'driver' => 'session',
-            'provider' => 'entreprises',
+            'provider' => 'etudiants',
         ],
 
         'etudiant-api' => [
             'driver' => 'token',
-            'provider' => 'entreprises',
+            'provider' => 'etudiants',
         ],
-        'enseigant' => [
+        'enseignant' => [
             'driver' => 'session',
-            'provider' => 'enseigants',
+            'provider' => 'enseignants',
         ],
-        'enseigant-api' => [
+        'enseignant-api' => [
             'driver' => 'token',
-            'provider' => 'enseigants',
+            'provider' => 'enseignants',
         ],
         'anonymat' => [
             'driver' => 'session',
@@ -110,9 +110,9 @@ return [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
         ],
-        'enseigants' => [
+        'enseignants' => [
             'driver' => 'eloquent',
-            'model' => App\Enseigant::class,
+            'model' => App\Enseignant::class,
         ],
         'etudiants' => [
             'driver' => 'eloquent',
@@ -161,8 +161,8 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-        'enseigants' => [
-            'provider' => 'enseigants',
+        'enseignants' => [
+            'provider' => 'enseignants',
             'table' => 'password_resets',
             'expire' => 60,
         ],

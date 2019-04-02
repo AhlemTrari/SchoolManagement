@@ -46,7 +46,7 @@
             <!-- Login-Registration Form  -->
             
             <div class="registration-login-form">
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ route('anonymat.login.submit') }}">
                 @csrf
                     <div class="container">
                         <div class="title h6">Login to your Account</div>

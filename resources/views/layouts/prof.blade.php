@@ -242,11 +242,15 @@
 				</li>
 				
 				<li>
-					<a href="#">
+					<a href="{{ route('enseignant.logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
 						<svg class="olymp-logout-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
 
 						<span>Se déconnecter</span>
 					</a>
+					<form id="logout-form" action="{{ route('enseignant.logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
 				</li>
 			</ul>
 
@@ -364,11 +368,16 @@
 									</a>
 								</li>
 								<li>
-									<a href="#">
+									<a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
 										<svg class="olymp-logout-icon"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-logout-icon')}}"></use></svg>
 
 										<span>Se déconnecter</span>
 									</a>
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
 								</li>
 							</ul>
 						</div>

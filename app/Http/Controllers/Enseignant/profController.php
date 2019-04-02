@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Anonymat;
 
-class AnonymatController extends Controller
+class profController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:enseignant');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,10 +17,7 @@ class AnonymatController extends Controller
      */
     public function index()
     {
-        $anonymats = Anonymat::all();
-         return view('admin.anonymat.index')->with([
-            'anonymats' => $anonymats,
-            ]);
+        return view('prof.accueil');
     }
 
     /**
@@ -38,26 +38,7 @@ class AnonymatController extends Controller
      */
     public function store(Request $request)
     {
-        $membre = new User();
-        if($request->hasFile('img')){
-            $file = $request->file('img');
-            $file_name = time().'.'.$file->getClientOriginalExtension();
-            $file->move(public_path('/uploads/photo'),$file_name);
-        }
-        else{
-            $file_name="userDefault.png";
-        }
-
-            
-            $membre->nom = $request->input('nom');
-            $membre->prenom = $request->input('prenom');
-            $membre->photo = 'uploads/photo/'.$file_name;
-            $membre->date_naissance = $request->input('date_naissance');
-            $membre->email = $request->input('email');
-            $membre->password = Hash::make($request->input('password'));
-            $membre->num_tel = $request->input('num_tel');
-            $membre->save();
-            return redirect('admin/anonymat');
+        //
     }
 
     /**

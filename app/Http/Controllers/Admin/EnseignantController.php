@@ -1,13 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Excel;
 use App\Enseignant;
 
 class EnseignantController extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+    
 	public function index()
     {
         $profs = Enseignant::all();
@@ -61,3 +67,4 @@ class EnseignantController extends Controller
     	});
     }
 }
+
