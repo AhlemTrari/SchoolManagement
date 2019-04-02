@@ -26,7 +26,7 @@ Route::prefix('admin')->group(function() {
 	Route::get('/', 'Admin\AdminController@index')->name('admin.dash');
 	Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 	Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-	Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+	Route::post('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 	//Profs CRUD
 
 	Route::get('/enseignant','Admin\EnseignantController@index');
@@ -75,21 +75,21 @@ Route::prefix('enseignant')->group(function() {
 	Route::get('/', 'enseignant\EnseignantController@index')->name('enseignant.dash');
 	Route::get('/login', 'Auth\EnseignantLoginController@showLoginForm')->name('enseignant.login');
 	Route::post('/login', 'Auth\EnseignantLoginController@login')->name('enseignant.login.submit');
-	Route::get('/logout', 'Auth\EnseignantLoginController@logout')->name('enseignant.logout');
+	Route::post('/logout', 'Auth\EnseignantLoginController@logout')->name('enseignant.logout');
 });
 
 Route::prefix('anonymat')->group(function() {
 	Route::get('/', 'Anonymat\AnonymatController@index')->name('anonymat.dash');
 	Route::get('/login', 'Auth\AnonymatLoginController@showLoginForm')->name('anonymat.login');
 	Route::post('/login', 'Auth\AnonymatLoginController@login')->name('anonymat.login.submit');
-	Route::get('/logout', 'Auth\AnonymatLoginController@logout')->name('anonymat.logout');
+	Route::post('/logout', 'Auth\AnonymatLoginController@logout')->name('anonymat.logout');
 });
 
 Route::prefix('etudiant')->group(function() {
 	Route::get('/', 'Etudiant\EtudiantController@index')->name('etudiant.dash');
 	Route::get('/login', 'Auth\EtudiantLoginController@showLoginForm')->name('etudiant.login');
 	Route::post('/login', 'Auth\EtudiantLoginController@login')->name('etudiant.login.submit');
-	Route::get('/logout', 'Auth\EtudiantLoginController@logout')->name('etudiant.logout');
+	Route::post('/logout', 'Auth\EtudiantLoginController@logout')->name('etudiant.logout');
 });
 
 // Route::get('import-export-csv-excel',array('as'=>'excel.import','uses'=>'FileController@importExportExcelORCSV'));

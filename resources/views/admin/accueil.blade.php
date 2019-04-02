@@ -1,4 +1,4 @@
-@extends('layouts.prof')
+@extends('layouts.datatable')
 @section('page-title','Accueil')
 @section('content')
 	<div class="row">
