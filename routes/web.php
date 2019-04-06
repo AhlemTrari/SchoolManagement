@@ -38,14 +38,16 @@ Route::get('/etudiant/', 'EtudiantController@index');
 
 //Profs CRUD
 
-
 Route::get('admin/enseignant','EnseignantController@index');
 Route::get('admin/enseignant/create','EnseignantController@create');
 Route::post('admin/enseignant','EnseignantController@store');
-Route::get('admin/enseignant/{id}/details','EnseignantController@details');
+Route::get('admin/enseignant/{id}/show','EnseignantController@show');
 Route::get('admin/enseignant/{id}/edit','EnseignantController@edit');
 Route::put('admin/enseignant/{id}','EnseignantController@update');
 Route::delete('admin/enseignant/{id}','EnseignantController@destroy');
+Route::view('admin/show','admin.prof.show');
+Route::view('param','admin.prof.param');
+
 
 //Etudiant CRUD
 
@@ -53,7 +55,7 @@ Route::delete('admin/enseignant/{id}','EnseignantController@destroy');
 Route::get('admin/etudiant','EtudiantController@index');
 Route::get('admin/etudiant/create','EtudiantController@create');
 Route::post('admin/etudiant','EtudiantController@store');
-Route::get('admin/etudiant/{id}/details','EtudiantController@details');
+Route::get('admin/etudiant/{id}/show','EtudiantController@show');
 Route::get('admin/etudiant/{id}/edit','EtudiantController@edit');
 Route::put('admin/etudiant/{id}','EtudiantController@update');
 Route::delete('admin/etudiant/{id}','EtudiantController@destroy');
@@ -63,7 +65,17 @@ Route::delete('admin/etudiant/{id}','EtudiantController@destroy');
 Route::get('admin/anonymat','AnonymatController@index');
 Route::get('admin/anonymat/create','AnonymatController@create');
 Route::post('admin/anonymat','AnonymatController@store');
-Route::get('admin/anonymat/{id}/details','AnonymatController@details');
+Route::get('admin/anonymat/{id}/show','AnonymatController@show');
 Route::get('admin/anonymat/{id}/edit','AnonymatController@edit');
 Route::put('admin/anonymat/{id}','AnonymatController@update');
 Route::delete('admin/anonymat/{id}','AnonymatController@destroy');
+
+//Groupe CRUD
+
+Route::get('admin/groupe','GroupeController@index');
+Route::get('admin/groupe/create','GroupeController@create');
+Route::post('admin/groupe','GroupeController@store');
+Route::get('admin/groupe/{id}/show','GroupeController@show');
+Route::get('admin/groupe/{id}/edit','GroupeController@edit');
+Route::put('admin/groupe/{id}','GroupeController@update');
+Route::delete('admin/groupe/{id}','GroupeController@destroy');

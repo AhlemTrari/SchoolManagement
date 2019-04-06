@@ -20,6 +20,19 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/Bootstrap/dist/css/bootstrap.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/Bootstrap/dist/css/bootstrap-grid.css')}}">
 
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/fafa/css/brands.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/fafa/css/all.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/fafa/css/fontawesome.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/fafa/css/regular.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/fafa/css/solid.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/fafa/css/svg-with-js.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/fafa/css/v4-shims.min.css')}}">
+
+
+
+
+
+
 	<!-- Main Styles CSS -->
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/main.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/fonts.min.css')}}">
@@ -723,7 +736,16 @@
         <script src="{{asset('assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js')}}" type="text/javascript"></script>
         <!-- Key Tables -->
         <script src="{{asset('assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js')}}"></script>
-        <!-- Selection table -->
+		<!-- fafayat -->
+        <script src="{{asset('assets/fafa/js/all.min.js')}}"></script>
+        <script src="{{asset('assets/fafa/js/brands.min.js')}}"></script>
+        <script src="{{asset('assets/fafa/js/fontawesome.min.js')}}"></script>
+        <script src="{{asset('assets/fafa/js/regular.min.js')}}"></script>
+        <script src="{{asset('assets/fafa/js/solid.min.js')}}"></script>
+        <script src="{{asset('assets/fafa/js/v4-shims.min.js')}}"></script>
+
+
+	    <!-- Selection table -->
         <script src="{{asset('assets/libs/datatables.net-select/js/dataTables.select.min.js')}}"></script>
 
         <script type="text/javascript">
