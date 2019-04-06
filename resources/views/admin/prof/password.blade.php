@@ -76,7 +76,7 @@
 		<div class="ui-block">
 			<div class="your-profile">
 				<div class="ui-block-title ui-block-title-small">
-					<h6 class="title">Your PROFILE</h6>
+					<h6 class="title">Votre profil</h6>
 				</div>
 
 				<div id="accordion1" role="tablist" aria-multiselectable="true">
@@ -142,7 +142,7 @@
 		<div class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
 			<div class="ui-block">
 				<div class="ui-block-title">
-					<h6 class="title">informations personnelles</h6>
+					<h6 class="title">Changer le mot de passe</h6>
 				</div>
 				<div class="ui-block-content">
 
@@ -152,78 +152,42 @@
 						<form>
 						<div class="row">
 					
+							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<div class="form-group label-floating">
+									<label class="control-label">Confirmer le mot de passe actuel</label>
+									<input class="form-control" placeholder="" type="password" value="Olympus-2017">
+								</div>
+							</div>
+					
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-								<div class="form-group label-floating">
-									<label class="control-label">Nom</label>
-									<input class="form-control" placeholder="" type="text" value="le Nom">
-								</div>
-					
-								<div class="form-group label-floating">
-									<label class="control-label">Email</label>
-									<input class="form-control" placeholder="" type="email" value="jspiegel@yourmail.com">
-								</div>
-					
 								<div class="form-group label-floating is-empty">
-									<label class="control-label">Numéro de téléphone</label>
-									<input class="form-control" placeholder="" type="text">
+									<label class="control-label">Votre nouveau mot de passe</label>
+									<input class="form-control" placeholder="" type="password">
 								</div>
 							</div>
-					
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-								<div class="form-group label-floating">
-									<label class="control-label">Prénom</label>
-									<input class="form-control" placeholder="" type="text" value="le prenom	">
+								<div class="form-group label-floating is-empty">
+									<label class="control-label">Confirmer le nouveau mot de passe</label>
+									<input class="form-control" placeholder="" type="password">
 								</div>
-					
-								<div class="form-group date-time-picker label-floating">
-									<label class="control-label">Date de naissance</label>
-									<input name="datetimepicker" value="10/24/1984" />
-									<span class="input-group-addon">
-															<svg class="olymp-month-calendar-icon icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-month-calendar-icon"></use></svg>
-														</span>
-								</div>
-					
-					
-								<div>
-									
-									<input type="file">
-								</div>
-
 							</div>
+					
+							<!-- <div class="col col-lg-12 col-sm-12 col-sm-12 col-12">
+								<div class="remember">
+					
+									<div class="checkbox">
+										<label>
+											<input name="optionsCheckboxes" type="checkbox">
+											Se souvenir de moi
+										</label>
+									</div>
+					
+									<a href="#" class="forgot">Mot de passe oublié</a>
+								</div>
+							</div> -->
+					
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<div class="form-group label-floating">
-									<label class="control-label">Ecrire une petite description de vous</label>
-									<textarea class="form-control" placeholder="">Hi, I’m James, I’m 36 and I work as a Digital Designer for the  “Daydreams” Agency in Pier 56</textarea>
-								</div>
-							</div>	
-					
-							
-							
-							
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<div class="form-group with-icon label-floating">
-									<label class="control-label">Votre compte Facebook</label>
-									<input class="form-control" type="text" value="www.facebook.com/james-spiegel95321">
-									<i class="fab fa-facebook-f c-facebook" aria-hidden="true"></i>
-								</div>
-								<div class="form-group with-icon label-floating">
-									<label class="control-label">Votre compte Twitter</label>
-									<input class="form-control" type="text" value="www.twitter.com/james_spiegelOK">
-									<i class="fab fa-twitter c-twitter" aria-hidden="true"></i>
-								</div>
-								<div class="form-group with-icon label-floating is-empty">
-									<label class="control-label">Votre compte Gmail </label>
-									<input class="form-control" type="text">
-									<i class="fab fa-google-plus-g" style="color: #D44638"></i>
-								</div>
-								
-								
-							</div>
-							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-								<button class="btn btn-secondary btn-lg full-width">Restorer tout les champs</button>
-							</div>
-							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-								<button class="btn btn-primary btn-lg full-width">Enregistrer toutes les modifications</button>
+								<button class="btn btn-primary btn-lg full-width">Changer le mot de passe maintenant!</button>
 							</div>
 					
 						</div>
@@ -270,7 +234,7 @@
 										<a href="{{url('password')}}">Changer le mot de passe</a>
 									</li>
 									<li>
-										<a href="{{url('competence')}}">Education et emploi</a>
+										<a href="{{url('competence')}}">Education et Emploi</a>
 									</li>
 									
 								</ul>

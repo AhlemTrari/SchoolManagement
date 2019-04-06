@@ -8,7 +8,6 @@
 <div class="header--standard header--standard-landing" id="header--standard">
     <div class="container">
         <div class="header--standard-wrap">
-
             <a href="{{url('/')}}" class="logo">
                 <div class="img-wrap">
                     <img src="{{asset('assets/logo1x_blanc.png')}}" alt="Olympus">
@@ -28,10 +27,9 @@
 <div class="container">
     <div class="row display-flex">
         <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-            <div class="landing-content">
-                <h1>Welcome to the Biggest Social Network in the World</h1>
-                <p>We are the best and biggest social network with 5 billion active users all around the world. Share you
-                    thoughts, write blog posts, show your favourite music via Stopify, earn badges and much more!
+           <div class="landing-content">
+                <h1>Laisser tomber, on ramasse les problèmes</h1>
+                <p>Utiliser Unisoft pour faciliter la gestion universitaire, rester en contact avec l'administration.
                 </p>
                 
             </div>
@@ -42,7 +40,7 @@
             <!-- Login-Registration Form  -->
             
             <div class="registration-login-form">
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ route('anonymat.login.submit') }}">
                 @csrf
                     <div class="container">
                         <div class="title h6">Login to your Account</div>

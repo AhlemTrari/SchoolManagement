@@ -142,90 +142,88 @@
 		<div class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
 			<div class="ui-block">
 				<div class="ui-block-title">
-					<h6 class="title">informations personnelles</h6>
+					<h6 class="title">Votre histoire d'éducation</h6>
 				</div>
 				<div class="ui-block-content">
 
 					
 					<!-- Personal Account Settings Form -->
-					
-						<form>
+					<form>
 						<div class="row">
 					
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating">
-									<label class="control-label">Nom</label>
-									<input class="form-control" placeholder="" type="text" value="le Nom">
+									<label class="control-label">Titre ou Lieu</label>
+									<input class="form-control" placeholder="" type="text" value="The New College of Design">
 								</div>
+							</div>
 					
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating">
-									<label class="control-label">Email</label>
-									<input class="form-control" placeholder="" type="email" value="jspiegel@yourmail.com">
+									<label class="control-label">Période</label>
+									<input class="form-control" placeholder="" type="text" value="2001 - 2006">
 								</div>
+							</div>
 					
+							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<div class="form-group label-floating">
+									<label class="control-label">Description</label>
+									<textarea class="form-control" placeholder=""  >Bachelor of Interactive Design in the New College. It was a five years intensive career. Average: A+
+													</textarea>
+								</div>
+							</div>
+					
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+								<div class="form-group label-floating">
+									<label class="control-label">Titre ou Lieu</label>
+									<input class="form-control" placeholder="" type="text" value="Rembrandt Institute">
+								</div>
+							</div>
+					
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+								<div class="form-group label-floating">
+									<label class="control-label">Période</label>
+									<input class="form-control" placeholder="" type="text" value="2008">
+								</div>
+							</div>
+					
+							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<div class="form-group label-floating">
+									<label class="control-label">Description</label>
+									<textarea class="form-control" placeholder=""  >Five months Digital Illustration course. Professor: Leonardo Stagg.
+													</textarea>
+								</div>
+							</div>
+					
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-empty">
-									<label class="control-label">Numéro de téléphone</label>
+									<label class="control-label">Titre ou Lieu</label>
 									<input class="form-control" placeholder="" type="text">
 								</div>
 							</div>
 					
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-								<div class="form-group label-floating">
-									<label class="control-label">Prénom</label>
-									<input class="form-control" placeholder="" type="text" value="le prenom	">
+								<div class="form-group label-floating is-empty">
+									<label class="control-label">Période</label>
+									<input class="form-control" placeholder="" type="text">
 								</div>
-					
-								<div class="form-group date-time-picker label-floating">
-									<label class="control-label">Date de naissance</label>
-									<input name="datetimepicker" value="10/24/1984" />
-									<span class="input-group-addon">
-															<svg class="olymp-month-calendar-icon icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-month-calendar-icon"></use></svg>
-														</span>
-								</div>
-					
-					
-								<div>
-									
-									<input type="file">
-								</div>
-
 							</div>
+					
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<div class="form-group label-floating">
-									<label class="control-label">Ecrire une petite description de vous</label>
-									<textarea class="form-control" placeholder="">Hi, I’m James, I’m 36 and I work as a Digital Designer for the  “Daydreams” Agency in Pier 56</textarea>
+								<div class="form-group label-floating is-empty">
+									<label class="control-label">Description</label>
+									<textarea class="form-control" placeholder=""  >
+													</textarea>
 								</div>
-							</div>	
-					
-							
-							
-							
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<div class="form-group with-icon label-floating">
-									<label class="control-label">Votre compte Facebook</label>
-									<input class="form-control" type="text" value="www.facebook.com/james-spiegel95321">
-									<i class="fab fa-facebook-f c-facebook" aria-hidden="true"></i>
-								</div>
-								<div class="form-group with-icon label-floating">
-									<label class="control-label">Votre compte Twitter</label>
-									<input class="form-control" type="text" value="www.twitter.com/james_spiegelOK">
-									<i class="fab fa-twitter c-twitter" aria-hidden="true"></i>
-								</div>
-								<div class="form-group with-icon label-floating is-empty">
-									<label class="control-label">Votre compte Gmail </label>
-									<input class="form-control" type="text">
-									<i class="fab fa-google-plus-g" style="color: #D44638"></i>
-								</div>
-								
-								
-							</div>
-							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-								<button class="btn btn-secondary btn-lg full-width">Restorer tout les champs</button>
-							</div>
-							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-								<button class="btn btn-primary btn-lg full-width">Enregistrer toutes les modifications</button>
 							</div>
 					
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+								<button class="btn btn-secondary btn-lg full-width">Annuler</button>
+							</div>
+					
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+								<button class="btn btn-primary btn-lg full-width">Enregistrer toutes les modifications	</button>
+							</div>
 						</div>
 					</form>
 					
@@ -233,6 +231,97 @@
 
 				</div>
 			</div>
+			<div class="ui-block">
+					<div class="ui-block-title">
+						<h6 class="title">Votre historique d'emploi</h6>
+					</div>
+					<div class="ui-block-content">
+
+						
+						<!-- Employement History Form -->
+						
+						<form>
+							<div class="row">
+								<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+									<div class="form-group label-floating">
+										<label class="control-label">Titre ou Lieu</label>
+										<input class="form-control" placeholder="" type="text" value="Digital Design Intern">
+									</div>
+								</div>
+						
+								<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+									<div class="form-group label-floating">
+										<label class="control-label">Période</label>
+										<input class="form-control" placeholder="" type="text" value="2006 - 2008">
+									</div>
+								</div>
+						
+								<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+									<div class="form-group label-floating">
+										<label class="control-label">Description</label>
+										<textarea class="form-control" placeholder=""  >Digital Design Intern for the “Multimedz” agency. Was in charge of the communication with the clients.
+														</textarea>
+									</div>
+								</div>
+						
+								<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+									<div class="form-group label-floating">
+										<label class="control-label">Titre ou Lieu</label>
+										<input class="form-control" placeholder="" type="text" value="UI/UX Designer">
+									</div>
+								</div>
+						
+								<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+									<div class="form-group label-floating">
+										<label class="control-label">Période</label>
+										<input class="form-control" placeholder="" type="text" value="2008 - 2013">
+									</div>
+								</div>
+						
+								<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+									<div class="form-group label-floating">
+										<label class="control-label">Description</label>
+										<textarea class="form-control" placeholder=""  >UI/UX Designer for the “Daydreams” agency.
+														</textarea>
+									</div>
+								</div>
+						
+								<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+									<div class="form-group label-floating is-empty">
+										<label class="control-label">Titre ou Lieu</label>
+										<input class="form-control" placeholder="" type="text">
+									</div>
+								</div>
+						
+								<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+									<div class="form-group label-floating is-empty">
+										<label class="control-label">Période</label>
+										<input class="form-control" placeholder="" type="text">
+									</div>
+								</div>
+						
+								<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+									<div class="form-group label-floating is-empty">
+										<label class="control-label">Description</label>
+										<textarea class="form-control" placeholder=""  >
+														</textarea>
+									</div>
+						
+								</div>
+						
+								<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+									<button class="btn btn-secondary btn-lg full-width">Annuler</button>
+								</div>
+						
+								<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+									<button class="btn btn-primary btn-lg full-width">Enregistrer toutes les modifications</button>
+								</div>
+							</div>
+						</form>
+						
+						<!-- ... end Employement History Form -->
+					</div>
+				</div>
 		</div>
 
 		<div class="col col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12  responsive-display-none">

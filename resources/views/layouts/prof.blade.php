@@ -20,19 +20,6 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/Bootstrap/dist/css/bootstrap.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/Bootstrap/dist/css/bootstrap-grid.css')}}">
 
-	<link rel="stylesheet" type="text/css" href="{{asset('assets/fafa/css/brands.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('assets/fafa/css/all.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('assets/fafa/css/fontawesome.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('assets/fafa/css/regular.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('assets/fafa/css/solid.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('assets/fafa/css/svg-with-js.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('assets/fafa/css/v4-shims.min.css')}}">
-
-
-
-
-
-
 	<!-- Main Styles CSS -->
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/main.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/fonts.min.css')}}">
@@ -122,7 +109,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="{{url('admin/etudiant')}}">
+					<a href="03-Newsfeed.html">
 						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon')}}"></use></svg>
 						<span class="left-menu-title">Etudiants</span>
 					</a>
@@ -134,13 +121,13 @@
 					</a>
 				</li>
 				<li>
-					<a href="{{url('admin/enseignant')}}">
+					<a href="16-FavPagesFeed.html">
 						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-star-icon')}}"></use></svg>
 						<span class="left-menu-title">Enseignants</span>
 					</a>
 				</li>
 				<li>
-					<a href="{{url('admin/anonymat')}}">
+					<a href="17-FriendGroups.html">
 						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon')}}"></use></svg>
 						<span class="left-menu-title">Agents anonymat</span>
 					</a>
@@ -255,13 +242,13 @@
 				</li>
 				
 				<li>
-					<a href="{{ route('admin.logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+					<a href="{{ route('enseignant.logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
 						<svg class="olymp-logout-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
 
 						<span>Se déconnecter</span>
 					</a>
-					<form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+					<form id="logout-form" action="{{ route('enseignant.logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
 				</li>
@@ -381,13 +368,14 @@
 									</a>
 								</li>
 								<li>
-									<a href="{{ route('admin.logout') }}" onclick="event.preventDefault();
+									<a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-						<svg class="olymp-logout-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
+										<svg class="olymp-logout-icon"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-logout-icon')}}"></use></svg>
 
-						<span>Se déconnecter</span>
-					</a>
-					<form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+										<span>Se déconnecter</span>
+									</a>
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
 								</li>
@@ -667,16 +655,9 @@
 <!-- ... end Responsive Header-BP -->
 <div class="header-spacer header-spacer-small"></div>
 
-
-<!-- Main Header Groups -->
-
-<div class="main-header">
-	@yield('main-header')
-</div>
-
 <!-- ... end Main Header Groups -->
 
-<div class="container">
+<div class="container" style="margin-top: 50px">
 	@yield('content')
 </div>
 
@@ -744,16 +725,7 @@
         <script src="{{asset('assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js')}}" type="text/javascript"></script>
         <!-- Key Tables -->
         <script src="{{asset('assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js')}}"></script>
-		<!-- fafayat -->
-        <script src="{{asset('assets/fafa/js/all.min.js')}}"></script>
-        <script src="{{asset('assets/fafa/js/brands.min.js')}}"></script>
-        <script src="{{asset('assets/fafa/js/fontawesome.min.js')}}"></script>
-        <script src="{{asset('assets/fafa/js/regular.min.js')}}"></script>
-        <script src="{{asset('assets/fafa/js/solid.min.js')}}"></script>
-        <script src="{{asset('assets/fafa/js/v4-shims.min.js')}}"></script>
-
-
-	    <!-- Selection table -->
+        <!-- Selection table -->
         <script src="{{asset('assets/libs/datatables.net-select/js/dataTables.select.min.js')}}"></script>
 
         <script type="text/javascript">
