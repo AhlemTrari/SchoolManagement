@@ -29,9 +29,8 @@
     <div class="row display-flex">
         <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
             <div class="landing-content">
-                <h1>Welcome to the Biggest Social Network in the World</h1>
-                <p>We are the best and biggest social network with 5 billion active users all around the world. Share you
-                    thoughts, write blog posts, show your favourite music via Stopify, earn badges and much more!
+                <h1>Laissez tomber, on ramasse les problèmes</h1>
+                <p>Utiliser UniSoft pour faciliter la gestion universitaire , collaborer avec vos enseignants et rester en contact avec l'administration.
                 </p>
                 
             </div>
