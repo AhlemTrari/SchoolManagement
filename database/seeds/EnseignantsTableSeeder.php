@@ -12,7 +12,7 @@ class EnseignantsTableSeeder extends Seeder
      */
     public function run()
     {
-        $prof = new Enseignant();
+         $prof = new Enseignant();
 
 	    $prof->nom = 'Prof';
 	    $prof->prenom = 'prof';

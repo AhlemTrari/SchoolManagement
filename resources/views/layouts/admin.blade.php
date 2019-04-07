@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-	<title>Statistics</title>
+	<title></title>
 
 	<!-- Required meta tags always come first -->
 	<meta charset="utf-8">
@@ -60,12 +60,13 @@
 				</li>
 				<li>
 					<a href="16-FavPagesFeed.html">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-star-icon')}}"></use></svg>
+						<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user-secret" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-user-secret fa-w-14 fa-3x">
+						</svg>
 					</a>
 				</li>
 				<li>
 					<a href="17-FriendGroups.html">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon')}}"></use></svg>
+						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="{{asset('assets/fafa/svgs/solid/user-secret.svg#olymp-newsfeed-icon')}}"></use></svg>
 					</a>
 				</li>
 				<li>
@@ -123,7 +124,7 @@
 				</li>
 				<li>
 					<a href="17-FriendGroups.html">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon')}}"></use></svg>
+						<i style="size: 3x" class="fas fa-user-secret"></i>
 						<span class="left-menu-title">Agents anonymat</span>
 					</a>
 				</li>
@@ -209,7 +210,7 @@
 				</li>
 				<li>
 					<a href="17-FriendGroups.html">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon')}}"></use></svg>
+						<i style="size: 3x" class="fas fa-user-secret"></i>
 						<span class="left-menu-title">Agents anonymat</span>
 					</a>
 				</li>
@@ -652,11 +653,11 @@
 
 
 <!-- Main Header Groups -->
-
+<!-- 
 <div class="main-header">
 	@yield('main-header')
 </div>
-
+ -->
 <!-- ... end Main Header Groups -->
 
 <div class="container">

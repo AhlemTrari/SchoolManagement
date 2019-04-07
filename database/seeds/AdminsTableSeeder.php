@@ -12,6 +12,7 @@ class AdminsTableSeeder extends Seeder
      */
     public function run()
     {
+        
         $admin = new Admin();
 
 	    $admin->nom = 'Admin';

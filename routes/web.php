@@ -101,3 +101,12 @@ Route::prefix('etudiant')->group(function() {
 //<!-- test -->
 Route::get('ExportProfs','EnseignantController@ExportProfs');
 //<!-- end test -->
+
+
+Route::view('admin/show','admin.prof.show');
+Route::view('param','admin.prof.param');
+Route::view('password','admin.prof.password');
+Route::view('competence','admin.prof.competence');
+
+
+

@@ -29,8 +29,8 @@
     <div class="row display-flex">
         <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
             <div class="landing-content">
-                <h1>Laissez tomber, on ramasse les problèmes</h1>
-                <p>Utiliser UniSoft pour faciliter la gestion universitaire , collaborer avec vos enseignants et rester en contact avec l'administration.
+                <h1>Laisser tomber, on ramasse les problèmes</h1>
+                <p>Utiliser Unisoft pour faciliter la gestion universitaire, collaborer avec vos enseignants.
                 </p>
                 
             </div>
