@@ -107,6 +107,13 @@ Route::view('admin/show','admin.prof.show');
 Route::view('param','admin.prof.param');
 Route::view('password','admin.prof.password');
 Route::view('competence','admin.prof.competence');
+Route::view('groupes','prof.groupes.groupes');
+
+
+Route::view('details','prof.groupes.details');
+
+
+
 
 
 
