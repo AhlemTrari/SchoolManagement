@@ -34,9 +34,9 @@
                             <td>{{$anonymat->num_tel}}</td>
 							<td>
 							<center>
-							<a href="#" class="btn btn-control bg-grey"><i class="fas fa-user"></i></a>
-							<a href="#edit{{ $anonymat->id }}Modal" class="btn btn-control bg-breez" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
-							<a href="#supprimer{{ $anonymat->id }}Modal" class="btn btn-control bg-orange" data-toggle="modal"><i class="fas fa-user-times"></i></a>
+								<a href="#" class="btn btn-control bg-grey" style="height:40px; width: 40px"><i class="fas fa-user"></i></a>
+								<a href="#edit{{ $anonymat->id }}Modal" class="btn btn-control bg-breez" data-toggle="modal" style="height:40px; width: 40px"><i class="fas fa-user-edit"></i></a>
+								<a href="#supprimer{{ $anonymat->id }}Modal" class="btn btn-control bg-orange" data-toggle="modal" style="height:40px; width: 40px"><i class="fas fa-user-times"></i></a>
 							</center>
 							</td>
                         

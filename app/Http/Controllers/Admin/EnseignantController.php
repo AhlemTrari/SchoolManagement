@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Excel;
@@ -22,9 +23,9 @@ class EnseignantController extends Controller
             ]);
     }
 
-    public function store(userRequest $request)
+    public function store(Request $request)
     {
-        $membre = new User();
+        $prof = new Enseignant();
         if($request->hasFile('img')){
             $file = $request->file('img');
             $file_name = time().'.'.$file->getClientOriginalExtension();
@@ -34,18 +35,19 @@ class EnseignantController extends Controller
             $file_name="userDefault.png";
         }
 
-            $membre->nom = $request->input('nom');
-            $membre->prenom = $request->input('prenom');
-            $membre->email = $request->input('email');
-            $membre->date_naissance = $request->input('date_naissance');
-            $membre->grade = $request->input('grade');
-            $membre->password = Hash::make($request->input('password'));
-            $membre->dept_id = $request->input('dept_id');
-            $membre->num_tel = $request->input('num_tel');
-            $membre->photo = 'uploads/photo/'.$file_name;
+            $prof->nom = $request->input('nom');
+            $prof->prenom = $request->input('prenom');
+            $prof->grade = $request->input('grade');
+            $prof->email = $request->input('email');
+            $prof->date_naissance = $request->input('date_naissance');
+            $prof->password = Hash::make($request->input('password'));
+            $prof->dept_id = '1';
+            $prof->num_tel = $request->input('num_tel');
+            $prof->photo = 'uploads/photo/'.$file_name;
 
-            $membre->save();
-        	return redirect('admin/prof');
+            $prof->save();
+
+        	return redirect('admin/enseignant');
 
     }
 

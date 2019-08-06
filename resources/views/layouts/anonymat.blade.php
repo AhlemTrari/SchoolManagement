@@ -42,7 +42,7 @@
 
 		<a href="{{asset('02-ProfilePage.html')}}" class="logo">
 			<div class="img-wrap">
-				<img src="{{asset('assets/img/logo.png')}}" alt="UniSoft">
+				<img src="{{asset('assets/i-soft_blanc.png')}}" alt="UniSoft">
 			</div>
 		</a>
 
@@ -88,7 +88,7 @@
 	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1">
 		<a href="{{asset('02-ProfilePage.html')}}" class="logo">
 			<div class="img-wrap">
-				<img src="{{asset('assets/img/logo.png')}}" alt="Olympus">
+				<img src="{{asset('assets/i-soft_blanc.png')}}" alt="Olympus">
 			</div>
 			<div class="title-block">
 				<h6 class="logo-title">UniSoft</h6>
@@ -149,7 +149,7 @@
 
 	<div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
 		<a href="#" class="logo js-sidebar-open">
-			<img src="{{asset('assets/img/logo.png')}}" alt="UniSoft">
+			<img src="{{asset('assets/i-soft_blanc.png')}}" alt="UniSoft">
 		</a>
 
 	</div>
@@ -157,7 +157,7 @@
 	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1-responsive">
 		<a href="#" class="logo">
 			<div class="img-wrap">
-				<img src="{{asset('assets/img/logo.png')}}" alt="UniSoft">
+				<img src="{{asset('assets/i-soft_blanc.png')}}" alt="UniSoft">
 			</div>
 			<div class="title-block">
 				<h6 class="logo-title">UniSoft</h6>
