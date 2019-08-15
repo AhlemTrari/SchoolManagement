@@ -60,9 +60,9 @@
 <div class="fixed-sidebar">
 	<div class="fixed-sidebar-left sidebar--small" id="sidebar-left">
 
-		<a href="{{asset('02-ProfilePage.html')}}" class="logo">
+		<a href="#" class="logo">
 			<div class="img-wrap">
-				<img src="{{asset('assets/img/logo.png')}}" alt="UniSoft">
+				<img src="{{asset('assets/i-soft_blanc.png')}}" alt="UniSoft">
 			</div>
 		</a>
 
@@ -74,29 +74,30 @@
 					</a>
 				</li>
 				<li>
-					<a href="{{asset('03-Newsfeed.html')}}">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon')}}"></use></svg>
+					<a href="{{url('admin/etudiant')}}">
+						<img class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="ETUDIANTS" src="{{asset('assets/icons/student.png')}}">
 					</a>
 				</li>
 				<li>
-					<a href="16-FavPagesFeed.html">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-star-icon')}}"></use></svg>
-					</a>
-				</li>
-				<li>
-					<a href="17-FriendGroups.html">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon')}}"></use></svg>
-					</a>
-				</li>
-				<li>
-					<a href="17-FriendGroups.html">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon')}}"></use></svg>
+					<a href="{{url('admin/groupe')}}">
+						<img class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="GROUPES" src="{{asset('assets/icons/groups.png')}}">
 					</a>
 				</li>
 				
 				<li>
-					<a href="20-CalendarAndEvents-MonthlyCalendar.html">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="CALENDAR AND EVENTS"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-calendar-icon')}}"></use></svg>
+					<a href="{{url('admin/enseignant')}}">
+						<img class="olymp-happy-faces-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="ENSEIGNANTS" src="{{asset('assets/icons/professor.png')}}">
+					</a>
+				</li>
+				<li>
+					<a href="{{url('admin/anonymat')}}">
+						<img class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="AGENTS ANONYMAT" src="{{asset('assets/icons/spy.png')}}">
+					</a>
+				</li>
+				
+				<li>
+					<a href="#">
+						<img class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="EVENEMENTS" src="{{asset('assets/icons/calendar.png')}}">
 					</a>
 				</li>
 				
@@ -108,7 +109,7 @@
 	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1">
 		<a href="{{asset('02-ProfilePage.html')}}" class="logo">
 			<div class="img-wrap">
-				<img src="{{asset('assets/img/logo.png')}}" alt="Olympus">
+				<img src="{{asset('assets/i-soft_blanc.png')}}" alt="Olympus">
 			</div>
 			<div class="title-block">
 				<h6 class="logo-title">UniSoft</h6>
@@ -125,33 +126,33 @@
 				</li>
 				<li>
 					<a href="{{url('admin/etudiant')}}">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon')}}"></use></svg>
+						<img class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="ETUDIANTS" src="{{asset('assets/icons/student.png')}}">
 						<span class="left-menu-title">Etudiants</span>
 					</a>
 				</li>
 				<li>
-					<a href="18-MusicAndPlaylists.html">
-						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MUSIC&PLAYLISTS"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-headphones-icon')}}"></use></svg>
+					<a href="{{url('admin/groupe')}}">
+						<img class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="GROUPES" src="{{asset('assets/icons/groups.png')}}">
 						<span class="left-menu-title">Groupes</span>
 					</a>
 				</li>
 				<li>
 					<a href="{{url('admin/enseignant')}}">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-star-icon')}}"></use></svg>
+						<img class="olymp-happy-faces-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="ENSEIGNANTS" src="{{asset('assets/icons/professor.png')}}">
 						<span class="left-menu-title">Enseignants</span>
 					</a>
 				</li>
 				<li>
 					<a href="{{url('admin/anonymat')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon')}}"></use></svg>
+						<img class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="AGENTS ANONYMAT" src="{{asset('assets/icons/spy.png')}}">
 						<span class="left-menu-title">Agents anonymat</span>
 					</a>
 				</li>
 			
 				<li>
-					<a href="20-CalendarAndEvents-MonthlyCalendar.html">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="CALENDAR AND EVENTS"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-calendar-icon')}}"></use></svg>
-						<span class="left-menu-title">Calendar and Events</span>
+					<a href="#">
+						<img class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="EVENEMENTS" src="{{asset('assets/icons/calendar.png')}}">
+						<span class="left-menu-title">Calendrier des évènements </span>
 					</a>
 				</li>
 			</ul>
@@ -169,7 +170,7 @@
 
 	<div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
 		<a href="#" class="logo js-sidebar-open">
-			<img src="{{asset('assets/img/logo.png')}}" alt="UniSoft">
+			<img src="{{asset('assets/i-soft_blanc.png')}}" alt="UniSoft">
 		</a>
 
 	</div>
@@ -177,7 +178,7 @@
 	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1-responsive">
 		<a href="#" class="logo">
 			<div class="img-wrap">
-				<img src="{{asset('assets/img/logo.png')}}" alt="UniSoft">
+				<img src="{{asset('assets/i-soft_blanc.png')}}" alt="UniSoft">
 			</div>
 			<div class="title-block">
 				<h6 class="logo-title">UniSoft</h6>
@@ -189,12 +190,12 @@
 			<div class="control-block">
 				<div class="author-page author vcard inline-items">
 					<div class="author-thumb">
-						<img alt="author" src="{{asset('assets/img/author-page.jpg')}}" class="avatar">
+						<img alt="author" src="{{asset('Auth::user()->photo')}}" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
 					<a href="02-ProfilePage.html" class="author-name fn">
 						<div class="author-title">
-							Nom prenom <svg class="olymp-dropdown-arrow-icon"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon')}}"></use></svg>
+						{{Auth::user()->nom}} {{Auth::user()->prenom}} <svg class="olymp-dropdown-arrow-icon"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon')}}"></use></svg>
 						</div>
 						
 					</a>
@@ -209,37 +210,37 @@
 					</a>
 				</li>
 				<li>
-					<a href="03-Newsfeed.html">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon')}}"></use></svg>
+					<a href="{{url('admin/etudiant')}}">
+						<img class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="ETUDIANTS" src="{{asset('assets/icons/student.png')}}">
 						<span class="left-menu-title">Etudiants</span>
 					</a>
 				</li>
 				<li>
-					<a href="18-MusicAndPlaylists.html">
-						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MUSIC&PLAYLISTS"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-headphones-icon')}}"></use></svg>
-						<span class="left-menu-title">Groupes</span>
+					<a href="{{url('admin/groupe')}}">
+						<img class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="GROUPES" src="{{asset('assets/icons/groups.png')}}">	
+						<span class="left-menu-title">Groupes</span>				
 					</a>
 				</li>
 				<li>
-					<a href="16-FavPagesFeed.html">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-star-icon')}}"></use></svg>
-
+					<a href="{{url('admin/enseignant')}}">
+						<img class="olymp-happy-faces-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="ENSEIGNANTS" src="{{asset('assets/icons/professor.png')}}">
 						<span class="left-menu-title">Enseignants</span>
 					</a>
 				</li>
 				<li>
-					<a href="17-FriendGroups.html">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon')}}"></use></svg>
+					<a href="{{url('admin/anonymat')}}">
+						<img class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="AGENTS ANONYMAT" src="{{asset('assets/icons/spy.png')}}">
 						<span class="left-menu-title">Agents anonymat</span>
 					</a>
 				</li>
 			
 				<li>
-					<a href="20-CalendarAndEvents-MonthlyCalendar.html">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="CALENDAR AND EVENTS"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-calendar-icon')}}"></use></svg>
-						<span class="left-menu-title">Calendar and Events</span>
+					<a href="#">
+						<img class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="EVENEMENTS" src="{{asset('assets/icons/calendar.png')}}">
+						<span class="left-menu-title">Calendrier des évènements</span>
 					</a>
 				</li>
+				
 			</ul>
 
 			<div class="ui-block-title ui-block-title-small">
@@ -284,6 +285,7 @@
 	</div>
 
 	<div class="header-content-wrapper">
+
 		<form class="search-bar w-search  friend-requests">
 			<div class="form-group with-button">
 				<input class="form-control" placeholder="Search here people or pages..." type="text">
@@ -365,7 +367,8 @@
 
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
-					<img alt="author" src="{{asset('assets/img/author-page.jpg')}}" class="avatar">
+					
+					<img src="{{asset(Auth::user()->photo)}}" class="user-image avatar" alt="User Image" style="width: 40px">
 					<span class="icon-status online"></span>
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar" data-mcs-theme="dark">
@@ -400,7 +403,8 @@
 				</div>
 				<a href="02-ProfilePage.html" class="author-name fn">
 					<div class="author-title">
-						Nom prenom<svg class="olymp-dropdown-arrow-icon"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon')}}"></use></svg>
+						{{Auth::user()->nom}} {{Auth::user()->prenom}} 
+						<svg class="olymp-dropdown-arrow-icon"><use xlink:href="{{asset('assets/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon')}}"></use></svg>
 					</div>
 					<span class="author-subtitle"></span>
 				</a>
@@ -667,7 +671,7 @@
 </header>
 
 <!-- ... end Responsive Header-BP -->
-<div class="header-spacer header-spacer-small"></div>
+<!-- <div class="header-spacer header-spacer-small"></div> -->
 
 
 <!-- Main Header Groups -->

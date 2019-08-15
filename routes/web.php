@@ -36,6 +36,16 @@ Route::prefix('admin')->group(function() {
 	Route::get('/enseignant/{id}/edit','Admin\EnseignantController@edit');
 	Route::put('/enseignant/{id}','Admin\EnseignantController@update');
 	Route::delete('/enseignant/{id}','Admin\EnseignantController@destroy');
+	//Route::view('admin/show','admin.prof.show');
+	Route::view('etudiant/show','admin.etudiant.show');//feriel: ajout de lapage show de l'étudiant
+	Route::view('enseignant/show','admin.prof.show');//feriel: ajout de lapage show de l'enseignant
+	Route::view('anonymat/show','admin.anonymat.show');//feriel: ajout de lapage show de l'AA
+
+
+
+	Route::view('param','admin.prof.param');
+	Route::view('password','admin.prof.password');
+	Route::view('competence','admin.prof.competence');
 
 	//Etudiant CRUD
 
@@ -59,13 +69,13 @@ Route::prefix('admin')->group(function() {
 
 	//Groupe CRUD
 
-	// Route::get('/groupe','GroupeController@index');
-	// Route::get('/groupe/create','GroupeController@create');
-	// Route::post('/groupe','GroupeController@store');
-	// Route::get('/groupe/{id}/details','GroupeController@details');
-	// Route::get('/groupe/{id}/edit','GroupeController@edit');
-	// Route::put('/groupe/{id}','GroupeController@update');
-	// Route::delete('/groupe/{id}','GroupeController@destroy');
+	Route::get('/groupe','GroupeController@index');
+	Route::get('/groupe/create','GroupeController@create');
+	Route::post('/groupe','GroupeController@store');
+	Route::get('/groupe/{id}/details','GroupeController@details');
+	Route::get('/groupe/{id}/edit','GroupeController@edit');
+	Route::put('/groupe/{id}','GroupeController@update');
+	Route::delete('/groupe/{id}','GroupeController@destroy');
 
 });
 	# <!-- end espaceAdmin -->
@@ -101,6 +111,7 @@ Route::prefix('etudiant')->group(function() {
 //<!-- test -->
 Route::get('ExportProfs','EnseignantController@ExportProfs');
 //<!-- end test -->
+
 
 
 Route::view('admin/show','admin.prof.show');

@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Http\Controllers\Controller;
+namespace App\Http\Controllers\Admin;
+
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Anonymat;
 
 class AnonymatController extends Controller
 {
-    public function __construct()
+     public function __construct()
     {
         $this->middleware('auth:admin');
     }
