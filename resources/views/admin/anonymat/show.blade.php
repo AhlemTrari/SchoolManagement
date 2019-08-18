@@ -1,5 +1,5 @@
-@extends('layouts.admin')
-@section('page-title','profil')
+@extends('layouts.datatable')
+
 @section('content')
 
 	<div class="row">

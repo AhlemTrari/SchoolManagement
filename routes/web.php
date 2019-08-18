@@ -37,7 +37,7 @@ Route::prefix('admin')->group(function() {
 	Route::put('/enseignant/{id}','Admin\EnseignantController@update');
 	Route::delete('/enseignant/{id}','Admin\EnseignantController@destroy');
 	//Route::view('admin/show','admin.prof.show');
-	Route::view('etudiant/show','admin.etudiant.show');//feriel: ajout de lapage show de l'étudiant
+	Route::get('etudiant/show','Admin\EtudiantController@show');//feriel: ajout de lapage show de l'étudiant
 	Route::view('enseignant/show','admin.prof.show');//feriel: ajout de lapage show de l'enseignant
 	Route::view('anonymat/show','admin.anonymat.show');//feriel: ajout de lapage show de l'AA
 

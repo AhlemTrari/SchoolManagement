@@ -20,4 +20,15 @@ class EtudiantController extends Controller
             'etudiants' => $etudiants,
             ]);
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show()
+    {
+        return view('admin.etudiant.show');
+    }
 }
