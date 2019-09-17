@@ -49,6 +49,8 @@ Route::prefix('admin')->group(function() {
 
 	//Etudiant CRUD
 
+	//Route::resource('/etudiant','Admin\EtudiantController');
+	//Route::POST('editPost','Admin\EtudiantController@edit');
 	Route::get('/etudiant','Admin\EtudiantController@index');
 	Route::get('/etudiant/create','Admin\EtudiantController@create');
 	Route::post('/etudiant','Admin\EtudiantController@store');

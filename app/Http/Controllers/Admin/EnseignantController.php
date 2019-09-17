@@ -51,6 +51,33 @@ class EnseignantController extends Controller
 
     }
 
+    public function update(Request $request, $id)
+    {
+
+        $prof = Enseignant::find($id);
+
+        $prof->nom = $request->input('nom');
+        $prof->prenom = $request->input('prenom');
+        $prof->grade = $request->input('grade');
+        $prof->email = $request->input('email');
+        $prof->date_naissance = $request->input('date_naissance');
+        $prof->num_tel = $request->input('num_tel');
+                    
+        $prof->save();
+
+        return redirect('admin/enseignant');
+
+    }
+
+    public function destroy($id)
+    {
+            
+        $prof = Enseignant::find($id);
+        $prof->delete();
+        return redirect('admin/enseignant');
+            
+    }
+
     public function ExportProfs()
     {
     	Excel::create('enseignants',function($excel){
