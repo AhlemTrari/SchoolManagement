@@ -75,7 +75,23 @@ class EnseignantController extends Controller
         $prof = Enseignant::find($id);
         $prof->delete();
         return redirect('admin/enseignant');
-            
+
+
+        public function show()
+    {
+        return view('admin.prof.show');
+    }
+         public function param()
+    {
+        return view('admin.prof.param');
+    }
+    public function password(){
+
+        return view('admin.prof.password');
+    }
+    public function competence(){
+
+        return view('admin.prof.competence');
     }
 
     public function ExportProfs()

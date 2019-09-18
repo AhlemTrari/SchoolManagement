@@ -38,14 +38,11 @@ Route::prefix('admin')->group(function() {
 	Route::delete('/enseignant/{id}','Admin\EnseignantController@destroy');
 	//Route::view('admin/show','admin.prof.show');
 	Route::get('etudiant/show','Admin\EtudiantController@show');//feriel: ajout de lapage show de l'étudiant
-	Route::view('enseignant/show','admin.prof.show');//feriel: ajout de lapage show de l'enseignant
-	Route::view('anonymat/show','admin.anonymat.show');//feriel: ajout de lapage show de l'AA
-
-
-
-	Route::view('param','admin.prof.param');
-	Route::view('password','admin.prof.password');
-	Route::view('competence','admin.prof.competence');
+	Route::get('enseignant/show','Admin\EnseignantController@show');//feriel: ajout de lapage show de l'enseignant
+	Route::get('enseignant/param','Admin\EnseignantController@param');
+	Route::get('enseignant/password','Admin\EnseignantController@password');
+	Route::get('enseignant/competence','Admin\EnseignantController@competence');
+	
 
 	//Etudiant CRUD
 
@@ -71,7 +68,8 @@ Route::prefix('admin')->group(function() {
 
 	//Groupe CRUD
 
-	Route::get('/groupe','GroupeController@index');
+	Route::get('/groupe','Admin\GroupeController@index');
+	Route::get('/groupe/show','Admin\GroupeController@show');
 	Route::get('/groupe/create','GroupeController@create');
 	Route::post('/groupe','GroupeController@store');
 	Route::get('/groupe/{id}/details','GroupeController@details');
@@ -88,6 +86,10 @@ Route::prefix('enseignant')->group(function() {
 	Route::get('/login', 'Auth\EnseignantLoginController@showLoginForm')->name('enseignant.login');
 	Route::post('/login', 'Auth\EnseignantLoginController@login')->name('enseignant.login.submit');
 	Route::post('/logout', 'Auth\EnseignantLoginController@logout')->name('enseignant.logout');
+	//Route::get('groupes','Enseignant\EnseignantController@g');
+	Route::get('groupes','GroupeController@index');
+	Route::view('groupe/show','prof.groupes.show');
+
 });
 
 Route::prefix('anonymat')->group(function() {
@@ -114,16 +116,6 @@ Route::prefix('etudiant')->group(function() {
 Route::get('ExportProfs','EnseignantController@ExportProfs');
 //<!-- end test -->
 
-
-
-Route::view('admin/show','admin.prof.show');
-Route::view('param','admin.prof.param');
-Route::view('password','admin.prof.password');
-Route::view('competence','admin.prof.competence');
-Route::view('groupes','prof.groupes.groupes');
-
-
-Route::view('details','prof.groupes.details');
 
 
 

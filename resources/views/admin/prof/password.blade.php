@@ -1,5 +1,4 @@
-@extends('layouts.admin')
-@section('page-title','profil')
+@extends('layouts.datatable')
 @section('content')
 
 	<div class="row">
@@ -15,7 +14,7 @@
 								<ul class="profile-menu">
 									<li></li>
 									<li><center>
-										<a href="{{url('admin/show')}}">A propos</a></center>
+										<a href="{{url('admin/enseignant/show')}}">A propos</a></center>
 									</li>
 									
 									
@@ -24,7 +23,7 @@
 							<div class="col col-lg-5 ml-auto col-md-5 col-sm-12 col-12">
 								<ul class="profile-menu">
 									<li>
-										 <center><a href="{{url('param')}}" class="active" >Paramètres </a></center>
+										 <center><a href="{{url('admin/enseignant/param')}}" class="active" >Paramètres </a></center>
 									</li>
 									<li></li>
 									
@@ -171,20 +170,7 @@
 									<input class="form-control" placeholder="" type="password">
 								</div>
 							</div>
-					
-							<!-- <div class="col col-lg-12 col-sm-12 col-sm-12 col-12">
-								<div class="remember">
-					
-									<div class="checkbox">
-										<label>
-											<input name="optionsCheckboxes" type="checkbox">
-											Se souvenir de moi
-										</label>
-									</div>
-					
-									<a href="#" class="forgot">Mot de passe oublié</a>
-								</div>
-							</div> -->
+				
 					
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<button class="btn btn-primary btn-lg full-width">Changer le mot de passe maintenant!</button>
@@ -225,16 +211,16 @@
 							<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
 								<ul class="your-profile-menu">
 									<li>
-										<a href="{{url('param')}}">Informations personelles</a>
+										<a href="{{url('admin/enseignant/param')}}">Informations personelles</a>
 									</li>
 									<!-- <li>
 										<a href="29-YourAccount-AccountSettings.html">Paramètres du compte</a>
 									</li> -->
 									<li>
-										<a href="{{url('password')}}">Changer le mot de passe</a>
+										<a href="{{url('admin/enseignant/password')}}">Changer le mot de passe</a>
 									</li>
 									<li>
-										<a href="{{url('competence')}}">Education et Emploi</a>
+										<a href="{{url('admin/enseignant/competence')}}">Education et Emploi</a>
 									</li>
 									
 								</ul>

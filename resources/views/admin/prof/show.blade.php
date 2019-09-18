@@ -1,5 +1,4 @@
-	@extends('layouts.admin')
-	@section('page-title','profil')
+ 	@extends('layouts.datatable')
 	@section('content')
 
 		<div class="row">
@@ -16,7 +15,7 @@
 									<ul class="profile-menu">
 										<li></li>
 										<li><center>
-											<a href="{{url('admin/show')}}" class="active">A propos</a></center>
+											<a href="{{url('admin/enseignant/show')}}" class="active">A propos</a></center>
 										</li>
 										
 										
@@ -25,7 +24,7 @@
 								<div class="col col-lg-5 ml-auto col-md-5 col-sm-12 col-12">
 									<ul class="profile-menu">
 										<li>
-											 <center><a href="{{url('param')}}">Paramètres </a></center>
+											 <center><a href="{{url('admin/enseignant/param')}}">Paramètres </a></center>
 										</li>
 										<li></li>
 										
