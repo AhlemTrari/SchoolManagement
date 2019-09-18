@@ -13,7 +13,7 @@ class GroupeController extends Controller
      */
     public function index()
     {
-        //
+        return view('prof.groupes.groupes');
     }
 
     /**

@@ -51,6 +51,23 @@ class EnseignantController extends Controller
 
     }
 
+        public function show()
+    {
+        return view('admin.prof.show');
+    }
+         public function param()
+    {
+        return view('admin.prof.param');
+    }
+    public function password(){
+
+        return view('admin.prof.password');
+    }
+    public function competence(){
+
+        return view('admin.prof.competence');
+    }
+
     public function ExportProfs()
     {
     	Excel::create('enseignants',function($excel){

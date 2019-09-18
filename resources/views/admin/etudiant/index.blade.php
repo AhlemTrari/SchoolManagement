@@ -36,14 +36,14 @@
                             <td><!-- {{$etudiant->niveau}} --></td>
 							<th>
 							<center>
-								<a href="{{url('admin/show')}}" class="btn btn-control bg-grey" style="height:40px; width: 40px"><i class="fas fa-user"></i></a>
+								<a href="{{url('admin/etudiant/show')}}" class="btn btn-control bg-grey" style="height:40px; width: 40px"><i class="fas fa-user"></i></a>
 								<a href="#edit{{ $etudiant->id }}Modal" class="btn btn-control bg-breez" data-toggle="modal" style="height:40px; width: 40px"><i class="fas fa-user-edit"></i></a>
 								<a href="#supprimer{{ $etudiant->id }}Modal" class="btn btn-control bg-orange" data-toggle="modal" style="height:40px; width: 40px"><i class="fas fa-user-times"></i></a>
 							
 							</th>
                         </tr>
                         <!-- modifier étudiant -->
-					<div class="modal fade" id="edit{{ $etudiant->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="edit{{ $etudiant->id }}ModalLabel"" aria-hidden="true">
+					<div class="modal fade" id="edit{{ $etudiant->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="edit{{ $etudiant->id }}ModalLabel" aria-hidden="true">
 						<div class="modal-dialog window-popup edit-my-poll-popup" role="document">
 						<div class="modal-content">
 							<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
@@ -129,7 +129,7 @@
 						</div>
 					</div>
                         <!-- supprimer étudiant -->
-						<div class="modal fade" id="supprimer{{ $etudiant->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="supprimer{{ $etudiant->id }}ModalLabel" aria-hidden="true">
+					<div class="modal fade" id="supprimer{{ $etudiant->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="supprimer{{ $etudiant->id }}ModalLabel" aria-hidden="true">
                           <div class="modal-dialog">
                               <div class="modal-content">
                                   <div class="modal-body text-center">

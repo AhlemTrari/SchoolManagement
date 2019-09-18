@@ -4,25 +4,28 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Anonymat;
 
-class AnonymatController extends Controller
+class GroupeController extends Controller
 {
-     public function __construct()
-    {
-        $this->middleware('auth:admin');
-    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+    
     public function index()
     {
-        $anonymats = Anonymat::all();
-         return view('admin.anonymat.index')->with([
-            'anonymats' => $anonymats,
-            ]);
+        return view('admin.groupe.index');
+    }
+    
+     public function show()
+    {
+        return view('admin.groupe.show');
     }
 
     /**
@@ -43,26 +46,7 @@ class AnonymatController extends Controller
      */
     public function store(Request $request)
     {
-        $membre = new User();
-        if($request->hasFile('img')){
-            $file = $request->file('img');
-            $file_name = time().'.'.$file->getClientOriginalExtension();
-            $file->move(public_path('/uploads/photo'),$file_name);
-        }
-        else{
-            $file_name="userDefault.png";
-        }
-
-            
-            $membre->nom = $request->input('nom');
-            $membre->prenom = $request->input('prenom');
-            $membre->photo = 'uploads/photo/'.$file_name;
-            $membre->date_naissance = $request->input('date_naissance');
-            $membre->email = $request->input('email');
-            $membre->password = Hash::make($request->input('password'));
-            $membre->num_tel = $request->input('num_tel');
-            $membre->save();
-            return redirect('admin/anonymat');
+        //
     }
 
     /**
@@ -71,7 +55,6 @@ class AnonymatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   
 
     /**
      * Show the form for editing the specified resource.

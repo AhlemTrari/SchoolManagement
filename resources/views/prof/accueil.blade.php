@@ -1,5 +1,4 @@
 @extends('layouts.prof')
-@section('page-title','Accueil')
 @section('content')
 	<div class="row">
 
