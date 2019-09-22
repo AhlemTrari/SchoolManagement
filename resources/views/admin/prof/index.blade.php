@@ -4,7 +4,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
-			<a href="#" class="btn btn-lg full-width bg-grey">Exporter en fichier excel<div class="ripple-container"></div></a>
+			<!-- <a href="#" class="btn btn-lg full-width bg-grey">Exporter en fichier excel<div class="ripple-container"></div></a> -->
 		</div>
 		<div class="col-md-4">
 			<a href="#" class="btn btn-breez btn-lg full-width btn-icon-left">Importer un fichier excel<div class="ripple-container"></div></a>
@@ -46,76 +46,76 @@
 									<a href="#edit{{ $prof->id }}Modal" class="btn btn-control bg-breez" data-toggle="modal" style="height:40px; width: 40px"><i class="fas fa-user-edit"></i></a>
 
 									<div class="modal fade" id="edit{{ $prof->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="edit{{ $prof->id }}Modal" aria-hidden="true">
-									<div class="modal-dialog window-popup edit-my-poll-popup" role="document">
-										<div class="modal-content">
-											<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
-												<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
-											</a>
-											<div class="modal-body">
+										<div class="modal-dialog window-popup edit-my-poll-popup" role="document">
+											<div class="modal-content">
+												<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
+													<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+												</a>
+												<div class="modal-body">
 
-												<div class="edit-my-poll-head bg-primary">
-													<div class="head-content">
-														<h2 class="title">Modifier enseignant</h2>
+													<div class="edit-my-poll-head bg-primary">
+														<div class="head-content">
+															<h2 class="title">Modifier enseignant</h2>
+														</div>
+
+														<img class="poll-img" style = "width: 20%" src="{{asset('assets/avatars/profaj.png')}}" alt="screen">
 													</div>
 
-													<img class="poll-img" style = "width: 20%" src="{{asset('assets/avatars/profaj.png')}}" alt="screen">
-												</div>
+													<div class="edit-my-poll-content">
+													
+														<form class="resume-form" action="{{ url('admin/enseignant/'.$prof->id)}}">
+															<input type="hidden" name="_method" value="PUT">
+									            				{{ csrf_field() }}
+									            			<fieldset>
+																<div class="form-group label-floating is-empty">
+																	<label class="control-label">Nom <span class="text-danger">*</span></label>
+																	<input class="form-control" placeholder="" value="{{$prof->nom}}" type="text" name="nom" required>
+																</div>
+																<div class="form-group label-floating is-empty">
+																	<label class="control-label">Prénom <span class="text-danger">*</span></label>
+																	<input class="form-control" placeholder="" value="{{$prof->prenom}}" type="text" name="prenom" required>
+																</div>
+																<div class="form-group label-floating is-select">
+												                    <label class="control-label">Grade <span class="text-danger">*</span></label>
+												                    <select name="grade" class="selectpicker form-control" value="{{$prof->grade}}" required>
+											                            
+											                            <option>MAA</option>
+											                            <option>MAB</option>
+											                            <option>MCA</option>
+											                            <option>MCB</option>
+											                            <option>Doctorant</option>
+											                            <option>Professeur</option>
+											                        </select>
+												                  </div>
+																<div class="form-group label-floating is-empty">
+																	<label class="control-label">Email  <span class="text-danger">*</span></label>
+																	<input class="form-control" name="email"  value="{{$prof->email}}" type="email" required>
+																</div>
+																<div class="form-group date-time-picker label-floating is-empty">
+																	<label class="control-label">Date de naissance</label>
+																		<input type="date" value="{{$prof->date_naissance}}" name="date_naissance"/>
+																		<span class="input-group-addon">
+																			<svg class="olymp-calendar-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+																		</span>
+																</div>
+																<div class="form-group label-floating is-empty">
+																	<label class="control-label">Numéro de téléphone</label>
+																	<input class="form-control" type="text" name="num_tel" value="{{$prof->num_tel}}">
+																</div>
+															</fieldset>
+															<div class="row" style="padding-top: 30px; margin-left: 35%;">
+														            <button class="close" type="button" data-dismiss="modal" aria-hidden="true"><i class="fa  fa-mail-reply"></i>Annuler &nbsp; &nbsp;
+														            </button>
+														            <button type="submit" class=" btn btn-lg btn-primary"><i class="fa fa-check"></i> Valider
+														            </button> 
+													        </div>
+														</form>
+													</div>
 
-												<div class="edit-my-poll-content">
-												
-													<form class="resume-form" action="{{ url('admin/enseignant/'.$prof->id)}}">
-														<input type="hidden" name="_method" value="PUT">
-								            				{{ csrf_field() }}
-								            			<fieldset>
-															<div class="form-group label-floating is-empty">
-																<label class="control-label">Nom <span class="text-danger">*</span></label>
-																<input class="form-control" placeholder="" value="{{$prof->nom}}" type="text" name="nom" required>
-															</div>
-															<div class="form-group label-floating is-empty">
-																<label class="control-label">Prénom <span class="text-danger">*</span></label>
-																<input class="form-control" placeholder="" value="{{$prof->prenom}}" type="text" name="prenom" required>
-															</div>
-															<div class="form-group label-floating is-select">
-											                    <label class="control-label">Grade <span class="text-danger">*</span></label>
-											                    <select name="grade" class="selectpicker form-control" value="{{$prof->grade}}" required>
-										                            
-										                            <option>MAA</option>
-										                            <option>MAB</option>
-										                            <option>MCA</option>
-										                            <option>MCB</option>
-										                            <option>Doctorant</option>
-										                            <option>Professeur</option>
-										                        </select>
-											                  </div>
-															<div class="form-group label-floating is-empty">
-																<label class="control-label">Email  <span class="text-danger">*</span></label>
-																<input class="form-control" name="email"  value="{{$prof->email}}" type="email" required>
-															</div>
-															<div class="form-group date-time-picker label-floating is-empty">
-																<label class="control-label">Date de naissance</label>
-																	<input type="date" value="{{$prof->date_naissance}}" name="date_naissance"/>
-																	<span class="input-group-addon">
-																		<svg class="olymp-calendar-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
-																	</span>
-															</div>
-															<div class="form-group label-floating is-empty">
-																<label class="control-label">Numéro de téléphone</label>
-																<input class="form-control" type="text" name="num_tel" value="{{$prof->num_tel}}">
-															</div>
-														</fieldset>
-														<div class="row" style="padding-top: 30px; margin-left: 35%;">
-													            <button class="close" type="button" data-dismiss="modal" aria-hidden="true"><i class="fa  fa-mail-reply"></i>Annuler &nbsp; &nbsp;
-													            </button>
-													            <button type="submit" class=" btn btn-lg btn-primary"><i class="fa fa-check"></i> Valider
-													            </button> 
-												        </div>
-													</form>
 												</div>
-
 											</div>
 										</div>
 									</div>
-								</div>
 
 									<!-- end edit -->
 									<!-- delet -->

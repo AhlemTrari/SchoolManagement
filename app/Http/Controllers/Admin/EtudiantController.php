@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Facades\Hash;
+use Illuminate\support\Facades\DB;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Etudiant;
+use Exporter;
 
 class EtudiantController extends Controller
 {
@@ -92,5 +95,37 @@ class EtudiantController extends Controller
         $etudiant->delete();
         return redirect('admin/etudiant');
             
+    }
+
+    public function import($id)
+    {
+        if($request->hasFile('liste_etudiants')){
+            $file = $request->file('liste_etudiants');
+            $file_name = time().'.'.$file->getClientOriginalExtension();
+            $file->move(public_path('/uploads/xsl'),$file_name);
+        }
+        $path= $request->file('liste_etudiants')->getRealPath();
+        $excel = Importer::make('Excel');
+        $excel->load($path);
+        $collection = $excel->getCollection();
+        //return json_encode($collection[1][0]);
+        for ($i=1; $i < count($collection); $i++) { 
+            $etudiant = new Etudiant();
+            $etudiant->nom = $collection[$i][0]; //$i hiya la ligne fi excel w 0 hiya colonne w tbedli 3la hsabe ch3ale 3andak mne colonne 0 1 2 3 4
+            $etudiant->save();
+        }
+        
+        return redirect('admin/etudiant');
+
+    }
+
+    public function export()
+    {
+        $path= $request->file('liste_etudiants');
+        $query = DB::table('etudiants');
+        $excel = Exporter::make('Excel');
+        $excel->loadQuery($query);
+        //return $excel->stream($yourFileName);
+        return $excel->save($path);
     }
 }

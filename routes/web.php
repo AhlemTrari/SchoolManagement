@@ -55,6 +55,8 @@ Route::prefix('admin')->group(function() {
 	Route::get('/etudiant/{id}/edit','Admin\EtudiantController@edit');
 	Route::put('/etudiant/{id}','Admin\EtudiantController@update');
 	Route::delete('/etudiant/{id}','Admin\EtudiantController@destroy');
+	Route::get('/etudiant/export','Admin\EtudiantController@export');
+	Route::post('/etudiant/import','Admin\EtudiantController@import');
 
 	//Agent CRUD
 
@@ -69,13 +71,15 @@ Route::prefix('admin')->group(function() {
 	//Groupe CRUD
 
 	Route::get('/groupe','Admin\GroupeController@index');
-	Route::get('/groupe/show','Admin\GroupeController@show');
-	Route::get('/groupe/create','GroupeController@create');
-	Route::post('/groupe','GroupeController@store');
-	Route::get('/groupe/{id}/details','GroupeController@details');
-	Route::get('/groupe/{id}/edit','GroupeController@edit');
-	Route::put('/groupe/{id}','GroupeController@update');
-	Route::delete('/groupe/{id}','GroupeController@destroy');
+	Route::get('/groupe/{id}/show','Admin\GroupeController@show');
+	Route::get('/groupe/create','Admin\GroupeController@create');
+	Route::post('/groupe','Admin\GroupeController@store');
+	Route::get('/groupe/{id}/details','Admin\GroupeController@details');
+	Route::get('/groupe/{id}/edit','Admin\GroupeController@edit');
+	Route::put('/groupe/{id}','Admin\GroupeController@update');
+	Route::delete('/groupe/{id}','Admin\GroupeController@destroy');
+	Route::post('/groupe/{id}/affecter','Admin\GroupeController@affecter');
+
 
 });
 	# <!-- end espaceAdmin -->

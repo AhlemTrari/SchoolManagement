@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use App\Anonymat;
 
@@ -43,7 +44,7 @@ class AnonymatController extends Controller
      */
     public function store(Request $request)
     {
-        $membre = new User();
+        $membre = new Anonymat();
         if($request->hasFile('img')){
             $file = $request->file('img');
             $file_name = time().'.'.$file->getClientOriginalExtension();
@@ -93,7 +94,16 @@ class AnonymatController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $membre = Anonymat::find($id);
+
+        $membre->nom = $request->input('nom');
+        $membre->prenom = $request->input('prenom');
+        $membre->date_naissance = $request->input('date_naissance');
+        $membre->email = $request->input('email');
+        $membre->num_tel = $request->input('num_tel');
+
+        $membre->save();
+        return redirect('admin/anonymat');
     }
 
     /**
@@ -104,6 +114,8 @@ class AnonymatController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $membre = Anonymat::find($id);
+        $membre->delete();
+        return redirect('admin/anonymat');
     }
 }

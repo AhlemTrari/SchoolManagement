@@ -1,17 +1,56 @@
 @extends('layouts.datatable')
 @section('content')
 <div class="container">
-	<div class="row">
-		<div class="col-md-4">
-			<a href="#" class="btn btn-lg full-width bg-grey">Exporter en fichier excel<div class="ripple-container"></div></a>
+	<form action="{{url('admin/etudiant/import')}}" method="POST" enctype="multipart/form-data">
+		<div class="row">
+			<div class="col-md-4">
+				<!-- <a href="{{url('admin/etudiant/export')}}" class="btn btn-lg full-width bg-grey">Exporter en fichier excel<div class="ripple-container"></div></a> -->
+			</div>
+
+			<div class="col-md-4">
+				<a data-toggle="modal" data-target="#create-friend-group-1" href="#" class="btn btn-breez btn-lg full-width btn-icon-left">Importer un fichier excel<div class="ripple-container"></div></a>
+			</div>
+
+			<!-- Window-popup Create Friends Group -->
+
+			<div class="modal fade" id="create-friend-group-1" tabindex="-1" role="dialog" aria-labelledby="create-friend-group-1" aria-hidden="true">
+				<div class="modal-dialog window-popup create-friend-group create-friend-group-1" role="document">
+					<div class="modal-content">
+						<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
+							<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+						</a>
+
+						<div class="modal-body">
+
+							<form class="form-group with-button" action="{{url('admin/etudiant/import')}}" method="POST" enctype="multipart/form-data">
+
+								<fieldset>
+									<div class="form-group label-floating is-empty">
+										<center>
+											<div style="width: 50%" class="file-upload">
+												<label for="upload" name="liste_etudiants" class="file-upload__label">Selectionnez un fichier excel</label>
+												<input id="upload" name="liste_etudiants" class="file-upload__input" type="file" >
+											</div>
+										</center> 
+									</div>
+				                </fieldset>
+
+								<button type="submit" class=" btn btn-blue btn-lg full-width"><i class="fa fa-check"></i> Valider</button> 
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- ... end Window-popup Create Friends Group -->
+
+
+			<div class="col-md-4">
+				<a href="#" class="btn btn-secondary btn-lg full-width" data-toggle="modal" data-target="#nv_etudiant" href="#">Ajouter étudiant<div class="ripple-container"></div></a>
+			</div>
 		</div>
-		<div class="col-md-4">
-			<a href="#" class="btn btn-breez btn-lg full-width btn-icon-left">Importer un fichier excel<div class="ripple-container"></div></a>
-		</div>
-		<div class="col-md-4">
-			<a href="#" class="btn btn-secondary btn-lg full-width" data-toggle="modal" data-target="#nv_etudiant" href="#">Ajouter étudiant<div class="ripple-container"></div></a>
-		</div>
-	</div>
+	</form>
 	<div class="row">
         <div class="col-12">
 			<table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">

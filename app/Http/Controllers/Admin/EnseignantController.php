@@ -75,13 +75,16 @@ class EnseignantController extends Controller
         $prof = Enseignant::find($id);
         $prof->delete();
         return redirect('admin/enseignant');
+    }
 
-
-        public function show()
+    public function show()
     {
         return view('admin.prof.show');
     }
-         public function param()
+
+    
+
+    public function param()
     {
         return view('admin.prof.param');
     }

@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\support\Facades\DB;
+use App\Etudiant;
+use App\Groupe;
+use App\Enseignant;
+use App\EnseignantGroupe;
 
 class GroupeController extends Controller
 {
@@ -20,73 +25,103 @@ class GroupeController extends Controller
     
     public function index()
     {
-        return view('admin.groupe.index');
+        $etudiants = DB::table('etudiants')->orderBy('nom', 'desc')->where('groupe_id',NULL)->get();
+        $profs = Enseignant::all();
+        $groupes = Groupe::all();
+
+        
+
+        return view('admin.groupe.index')->with([
+            'etudiants' => $etudiants,
+            'profs' => $profs,
+            'groupes' => $groupes,
+
+            ]);;
     }
     
-     public function show()
+     public function show($id)
     {
-        return view('admin.groupe.show');
+        $groupe = Groupe::find($id);
+        $profs_groupe = DB::select("SELECT eg.module , e.id  
+                                from enseignants e, groupes g, enseignant_groupe eg 
+                                where e.id = eg.enseignant_id and g.id = eg.groupe_id and g.id = $id");
+        return view('admin.groupe.show')->with([
+            'groupe' => $groupe,
+            'profs_groupe' => $profs_groupe
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+
+        $groupe = new Groupe;
+
+        $groupe->nom = $request->input('nom');
+        $groupe->filiere = $request->input('filiere');
+        $groupe->niveau = $request->input('niveau');
+
+        $groupe->save();
+
+        $etudiants =  $request->input('etudiant');
+
+        foreach ($etudiants as $key => $value) {
+
+            $etudiant = Etudiant::find($value);
+            $etudiant->groupe_id = $groupe->id;
+            $etudiant->save();
+         }
+
+         return redirect('admin/groupe');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, $id)
     {
-        //
+        
+        $groupe = Groupe::find($id);
+        $groupe->nom = $request->input('nom');
+        $groupe->filiere = $request->input('filiere');
+        $groupe->niveau = $request->input('niveau');
+
+        $groupe->save();
+
+
+        $etudiants = DB::table('etudiants')
+             ->where('groupe_id','=',$id)
+             ->update(['groupe_id' => NULL]);
+
+
+        $etudiants =  $request->input('etudiant');
+        foreach ($etudiants as $key => $value) {
+
+            $etudiant = Etudiant::find($value);
+            $etudiant->groupe_id = $groupe->id;
+            $etudiant->save();
+         }
+
+         return redirect('admin/groupe');
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
-        //
+        $groupe = Groupe::find($id);
+        $groupe->delete();
+        return redirect('admin/groupe');
+    }
+
+    public function affecter(Request $request, $id)
+    {
+        $groupe = Groupe::find($id);
+
+        $enseignant_groupe = new EnseignantGroupe;
+
+        $enseignant_groupe->enseignant_id = $request->input('prof');
+        $enseignant_groupe->module = $request->input('module');
+        $enseignant_groupe->groupe_id = $id;
+        $enseignant_groupe->save();
+
+        return redirect('admin/groupe');
     }
 }

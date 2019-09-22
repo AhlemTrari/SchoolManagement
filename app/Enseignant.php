@@ -27,4 +27,9 @@ class Enseignant extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function groupes()
+    {
+        return $this->belongsToMany('App\Groupe');
+    }
 }
