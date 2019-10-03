@@ -17,6 +17,7 @@
         <link href="{{asset('assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('assets/libs/datatables.net-select-bs4/css/select.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
 
+
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/Bootstrap/dist/css/bootstrap-reboot.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/Bootstrap/dist/css/bootstrap.css')}}">
@@ -35,6 +36,7 @@
 			}
 		});
 	</script>
+	
 
 </head>
 

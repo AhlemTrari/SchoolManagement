@@ -25,61 +25,37 @@
 				<ul class="nav nav-pills nav-fill">
 
 		            <li class="nav-item">
-		                <a href="#etudiant" data-toggle="tab" aria-expanded="false" class="nav-link active">
-		                   Liste des étudiants
+		                <a href="#accueil" data-toggle="tab" aria-expanded="false" class="nav-link active">
+		                   Accueil
 		                </a>
 		            </li>
 		            <li class="nav-item">
-		                <a href="#presence" data-toggle="tab" aria-expanded="false" class="nav-link">
-		                   Présence
+		                <a href="#apropos" data-toggle="tab" aria-expanded="false" class="nav-link">
+		                   A propos
 		                </a>
 		            </li>
 
 		              <li class="nav-item">
-		                <a href="#historique" data-toggle="tab" aria-expanded="true" class="nav-link ">
-		                    Historique
-		                </a>
-		              </li>
-
-		              <li class="nav-item">
-		                <a href="#exclus" data-toggle="tab" aria-expanded="true" class="nav-link ">
-		                    Liste des exclus
+		                <a href="#edit" data-toggle="tab" aria-expanded="true" class="nav-link ">
+		                    Modifier
 		                </a>
 		              </li>
 		        </ul>
-		        <br><br>
 		        <div class="tab-content">
 
-		        	
-
-		            <div class="tab-pane show active" id="etudiant">
-		            	<i class="fas fa-download"></i>
-		              <div class="ui-block">
-		              	<ol class="list-group">
-		              		<li class="list-group-item">etudiant 1 </li>
-		              		<li class="list-group-item">etudiant 2 </li>
-		              		<li class="list-group-item">etudiant 3 </li>
-		              		<li class="list-group-item">etudiant 4 </li>
-
-		              	</ol>
-		              </div>
+		            <div class="tab-pane show active" id="accueil">
+		              AAA
 		            </div>
 
-		            <div class="tab-pane" id="presence">
-		            	<div class="ui-block">
-
-		            	</div>
+		            <div class="tab-pane" id="apropos">
+		            	BBB
 		            </div>
 		             
 
-		            <div class="tab-pane " id="historique">
+		            <div class="tab-pane " id="edit">
 		              CCC
-		     		 </div>
 
-		     		 <div class="tab-pane " id="exclus">
-		              CCC
-		     		 </div>
-
+		          </div>
 		        </div>
 
 							
