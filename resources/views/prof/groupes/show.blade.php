@@ -1,33 +1,67 @@
 @extends('layouts.prof')
 @section('content')
 <div class="row">
-	<main class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12">
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">
-						<div class="row">
+	<div class="col col-xl-8  col-lg-8  col-md-8 col-sm-8 col-8">
+		<div class="ui-block">
+			<div class="ui-block-title">
+				<h6 class="title">
+					<div class="row">
 
-							<div class="col-6">
-							<p class="text-left">Groupe: ....</p>
-							</div>
-
-							<div class="col-6">
-							<p class="text-left">Module: ....</p>
-							</div>
-
+						<div class="col-6">
+						<p class="text-left">Groupe: ....</p>
 						</div>
-					</h6>
-				</div>
 
-				<div class="ui-block-content">
-					<div class="tab-content">
-						<div class="tab-pane active" id="home" role="tabpanel" data-mh="log-tab">
+						<div class="col-6">
+						<p class="text-left">Module: ....</p>
 						</div>
+
 					</div>
-				</div>
+				</h6>
 			</div>
-		</main>
-<aside class="col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-12 col-12">
+
+		</div>
+			<div class="ui-block-content">
+						
+				<ul class="nav nav-pills nav-fill">
+
+		            <li class="nav-item">
+		                <a href="#accueil" data-toggle="tab" aria-expanded="false" class="nav-link active">
+		                   Accueil
+		                </a>
+		            </li>
+		            <li class="nav-item">
+		                <a href="#apropos" data-toggle="tab" aria-expanded="false" class="nav-link">
+		                   A propos
+		                </a>
+		            </li>
+
+		              <li class="nav-item">
+		                <a href="#edit" data-toggle="tab" aria-expanded="true" class="nav-link ">
+		                    Modifier
+		                </a>
+		              </li>
+		        </ul>
+		        <div class="tab-content">
+
+		            <div class="tab-pane show active" id="accueil">
+		              AAA
+		            </div>
+
+		            <div class="tab-pane" id="apropos">
+		            	BBB
+		            </div>
+		             
+
+		            <div class="tab-pane " id="edit">
+		              CCC
+
+		          </div>
+		        </div>
+
+							
+		    </div>
+	</div>		
+		<div class="col col-xl-4  col-lg-4  col-md-4 col-sm-4 col-4">
 			<div class="ui-block">				
 				<!-- W-Calendar -->				
 				<div class="w-calendar calendar-container">
@@ -432,8 +466,11 @@
 				</div>				
 				<!-- ... end W-Calendar -->			
 			</div>			
-		</aside>
-		<aside class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
+		</div>
+		<div class="col col-xl-8  col-lg-8  col-md-8 col-sm-8 col-8">
+		</div>
+		<div class="col col-xl-4  col-lg-4  col-md-4 col-sm-4 col-4">
+
 
 			<div class="ui-block">
 				<div class="ui-block-title">
@@ -475,6 +512,6 @@
 				<!-- .. end W-Activity-Feed -->
 			</div>
 
-		</aside>
-	</div>
+		</div>
+</div>
 @endsection

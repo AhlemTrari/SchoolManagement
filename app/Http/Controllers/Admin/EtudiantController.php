@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Etudiant;
 use Exporter;
+use Importer;
 
 class EtudiantController extends Controller
 {
@@ -97,27 +98,48 @@ class EtudiantController extends Controller
             
     }
 
-    public function import($id)
-    {
-        if($request->hasFile('liste_etudiants')){
-            $file = $request->file('liste_etudiants');
-            $file_name = time().'.'.$file->getClientOriginalExtension();
-            $file->move(public_path('/uploads/xsl'),$file_name);
-        }
-        $path= $request->file('liste_etudiants')->getRealPath();
-        $excel = Importer::make('Excel');
-        $excel->load($path);
-        $collection = $excel->getCollection();
-        //return json_encode($collection[1][0]);
-        for ($i=1; $i < count($collection); $i++) { 
-            $etudiant = new Etudiant();
-            $etudiant->nom = $collection[$i][0]; //$i hiya la ligne fi excel w 0 hiya colonne w tbedli 3la hsabe ch3ale 3andak mne colonne 0 1 2 3 4
-            $etudiant->save();
-        }
+    // public function import(Request $request)
+    // {
+    //     if($request->hasFile('liste_etudiants')){
+    //         $file = $request->file('liste_etudiants');
+    //         $file_name = time().'.'.$file->getClientOriginalExtension();
+    //         $file->move(public_path('/uploads/xsl'),$file_name);
+    //     }
+    //     $path= $request->file('liste_etudiants')->getRealPath();
+    //     $excel = Importer::make('Excel');
+    //     $excel->load($path);
+    //     $collection = $excel->getCollection();
+    //     //return json_encode($collection[1][0]);
+    //     for ($i=1; $i < count($collection); $i++) { 
+    //         $etudiant = new Etudiant();
+    //         $etudiant->nom = $collection[$i][0]; //$i hiya la ligne fi excel w 0 hiya colonne w tbedli 3la hsabe ch3ale 3andak mne colonne 0 1 2 3 4
+    //         $etudiant->save();
+    //     }
         
-        return redirect('admin/etudiant');
+    //     return redirect('admin/etudiant');
 
-    }
+    // }
+
+    public function import(Request $request)
+     {
+        if($request->hasFile('file')){
+            $path = $request->file('file')->getRealPath();
+            $data = Excel::load($path, function($reader){})->get();
+            if(!empty($data) && $data->count()){
+                foreach ($data as $key => $value) {
+                    $etudiant = new Etudiant();
+                    $etudiant->matricule = $value->matricule;
+                    $etudiant->nom = $value->nom;
+                    $etudiant->prenom = $value->prenom;
+                    $etudiant->email = $value->email;
+                    $etudiant->date_naissance = $value->date_naissance;
+                                
+                    $etudiant->save();
+                }
+            }
+        }
+        return back();
+     }
 
     public function export()
     {

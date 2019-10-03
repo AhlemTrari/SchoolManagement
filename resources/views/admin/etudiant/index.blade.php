@@ -2,6 +2,7 @@
 @section('content')
 <div class="container">
 	<form action="{{url('admin/etudiant/import')}}" method="POST" enctype="multipart/form-data">
+		{{ csrf_field() }}
 		<div class="row">
 			<div class="col-md-4">
 				<!-- <a href="{{url('admin/etudiant/export')}}" class="btn btn-lg full-width bg-grey">Exporter en fichier excel<div class="ripple-container"></div></a> -->
@@ -23,6 +24,7 @@
 						<div class="modal-body">
 
 							<form class="form-group with-button" action="{{url('admin/etudiant/import')}}" method="POST" enctype="multipart/form-data">
+								{{ csrf_field() }}
 
 								<fieldset>
 									<div class="form-group label-floating is-empty">
