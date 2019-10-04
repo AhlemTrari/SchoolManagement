@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Anonymat;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Module;
+use App\Paquet;
 
 class AnonymatController extends Controller
 {
@@ -24,6 +26,24 @@ class AnonymatController extends Controller
      */
     public function index()
     {
-        return view('anonymat.accueil');
+        
+        
+         $paquets = Paquet::all();
+         return view('anonymat.accueil')->with([
+            'paquets' => $paquets,
+            ]);
+    }
+
+        public function store(Request $request)
+    {
+
+        $paquet = new Paquet();
+
+            $paquet->Libelle = $request->input('Libelle');
+            $paquet->save();
+
+            return redirect('anonymat/');
+
+         
     }
 }
