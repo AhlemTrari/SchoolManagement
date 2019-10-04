@@ -3,9 +3,7 @@
 @section('content')
 <div class="container">
 		<div class="row">
-			<div class="col-md-8">
-				
-			</div>
+			<div class="col-md-8"></div>
 			
 			<div class="col-md-4">
 				<a href="#" class="btn btn-secondary btn-lg full-width" data-toggle="modal" data-target="#nv_groupe" href="#">Ajouter Groupe<div class="ripple-container"></div></a>
@@ -65,12 +63,12 @@
                                                                         {{ csrf_field() }}
                                                                     <fieldset>
                                                                         <div class="form-group label-floating is-empty">
-                                                                            <label class="control-label">Nom</label>
-                                                                            <input class="form-control" placeholder="" name="nom" value="{{$groupe->nom}}" type="text">
-                                                                        </div>
-                                                                        <div class="form-group label-floating is-empty">
-                                                                            <label class="control-label">Filière</label>
-                                                                            <input class="form-control" placeholder="" name="filiere" value="{{$groupe->filiere}}" type="text">
+                                <label class="control-label">Nom</label>
+                                <input class="form-control" placeholder="" name="nom" value="{{$groupe->nom}}" type="text">
+                                         </div>
+                                <div class="form-group label-floating is-empty">
+                    <label class="control-label">Filière</label>
+                  <input class="form-control" placeholder="" name="filiere" value="{{$groupe->filiere}}" type="text">
                                                                         </div>
                                                                         <div class="form-group label-floating is-empty">
                                                                             <label class="control-label">Niveau</label>

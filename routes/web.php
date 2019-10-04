@@ -99,10 +99,13 @@ Route::prefix('enseignant')->group(function() {
 
 Route::prefix('anonymat')->group(function() {
 	Route::get('/', 'Anonymat\AnonymatController@index')->name('anonymat.dash');
+	Route::post('/', 'Anonymat\AnonymatController@store');
 	Route::get('/login', 'Auth\AnonymatLoginController@showLoginForm')->name('anonymat.login');
 	Route::post('/login', 'Auth\AnonymatLoginController@login')->name('anonymat.login.submit');
 	Route::post('/logout', 'Auth\AnonymatLoginController@logout')->name('anonymat.logout');
+
 });
+
 
 Route::prefix('etudiant')->group(function() {
 	Route::get('/', 'Etudiant\EtudiantController@index')->name('etudiant.dash');
