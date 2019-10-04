@@ -91,7 +91,7 @@ Route::prefix('enseignant')->group(function() {
 	Route::post('/login', 'Auth\EnseignantLoginController@login')->name('enseignant.login.submit');
 	Route::post('/logout', 'Auth\EnseignantLoginController@logout')->name('enseignant.logout');
 	//Route::get('groupes','Enseignant\EnseignantController@g');
-	Route::get('groupes','GroupeController@index');
+	Route::get('groupes','Enseignant\GroupeController@index');
 	Route::view('groupe/show','prof.groupes.show');
 	Route::view('groupe/showw','prof.groupes.showw');
 

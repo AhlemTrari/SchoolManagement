@@ -14,7 +14,7 @@
 				<div class="ui-block-content">
 				<div class="container">
 				
-				
+					@foreach(Auth::user()->groupes as $groupe)
 						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 							<div class="ui-block">
 
@@ -24,7 +24,7 @@
 								<div class="birthday-item inline-items">
 									
 									<div class="birthday-author-name">
-										<a href="#" class="h6 author-name">Groupe:</a>
+										<a href="#" class="h6 author-name">Groupe: {{$groupe->nom}}</a>
 										<div class="birthday-date">Module...</div>
 									</div>
 									<a href="" class="btn btn-sm bg-blue">Détails</a>
@@ -34,82 +34,8 @@
 
 							</div>
 						</div>
-						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<div class="ui-block">
-
-								
-								<!-- Birthday Item -->
-								
-								<div class="birthday-item inline-items">
-									
-									<div class="birthday-author-name">
-										<a href="#" class="h6 author-name">Groupe:</a>
-										<div class="birthday-date">Module...</div>
-									</div>
-									<a href="" class="btn btn-sm bg-blue">Détails</a>
-								</div>
-								
-								<!-- ... end Birthday Item -->
-
-							</div>
-						</div>
-						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<div class="ui-block">
-
-								
-								<!-- Birthday Item -->
-								
-								<div class="birthday-item inline-items">
-									
-									<div class="birthday-author-name">
-										<a href="#" class="h6 author-name">Groupe:</a>
-										<div class="birthday-date">Module...</div>
-									</div>
-									<a href="" class="btn btn-sm bg-blue">Détails</a>
-								</div>
-								
-								<!-- ... end Birthday Item -->
-
-							</div>
-						</div>
-						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<div class="ui-block">
-
-								
-								<!-- Birthday Item -->
-								
-								<div class="birthday-item inline-items">
-									
-									<div class="birthday-author-name">
-										<a href="#" class="h6 author-name">Groupe:</a>
-										<div class="birthday-date">Module...</div>
-									</div>
-									<a href="" class="btn btn-sm bg-blue">Détails</a>
-								</div>
-								
-								<!-- ... end Birthday Item -->
-
-							</div>
-						</div>
-						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<div class="ui-block">
-
-								
-								<!-- Birthday Item -->
-								
-								<div class="birthday-item inline-items">
-									
-									<div class="birthday-author-name">
-										<a href="#" class="h6 author-name">Groupe:</a>
-										<div class="birthday-date">Module...</div>
-									</div>
-									<a href="" class="btn btn-sm bg-blue">Détails</a>
-								</div>
-								
-								<!-- ... end Birthday Item -->
-
-							</div>
-						</div>
+					@endforeach
+						
 						
 					
 				</div>
