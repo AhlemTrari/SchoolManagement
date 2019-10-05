@@ -8,11 +8,11 @@
 					<div class="row">
 
 						<div class="col-6">
-						<p class="text-left">Groupe: ....</p>
+						<p class="text-left">Groupe: {{$groupe->nom}}</p>
 						</div>
 
 						<div class="col-6">
-						<p class="text-left">Module: ....</p>
+						<p class="text-left">Module: @foreach( $groupe->modules as $module) {{$module->Libelle}} @endforeach</p>
 						</div>
 
 					</div>
@@ -50,23 +50,70 @@
 		        <br><br>
 		        <div class="tab-content">
 
-		        	
+		            <div class="tab-pane fade show active" id="etudiant">
+		              <div class="">
+		              	<table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
+			                <thead>
+			                    <tr>
+			                        <th>Matricule</th>
+			                        <th>Nom</th>
+			                        <th>Prénom</th>
+			                        <th>Date de naissance</th>
+			                    </tr>
+			                </thead>
+			                <tbody>
+			                	@foreach($groupe->etudiants as $etu)
+			                    <tr>
+			                        <td>{{$etu->matricule}}</td>
+			                        <td>{{$etu->nom}}</td>
+			                        <td>{{$etu->prenom}}</td>
+			                        <td>{{$etu->date_naissance}}</td>
+			                    </tr>
 
-		            <div class="tab-pane show active" id="etudiant">
-		            	<i class="fas fa-download"></i>
-		              <div class="ui-block">
-		              	<ol class="list-group">
-		              		<li class="list-group-item">etudiant 1 </li>
-		              		<li class="list-group-item">etudiant 2 </li>
-		              		<li class="list-group-item">etudiant 3 </li>
-		              		<li class="list-group-item">etudiant 4 </li>
-
-		              	</ol>
+			                	@endforeach
+			            	</tbody>
+			        	</table>
 		              </div>
 		            </div>
 
 		            <div class="tab-pane" id="presence">
-		            	<div class="ui-block">
+		            	<div class="u">
+            				<form method="POST" action="{{url('enseignant/groupe/presence')}}" class="comment-form inline-item">
+            					{{ csrf_field() }}
+			            		<table id="datatable-buttons" class="table">
+					                <thead>
+					                    <tr>
+					                        <th>Etudiant</th>
+					                        <th>Présent</th>
+					                        <th>Absent</th>
+					                    </tr>
+					                </thead>
+					                <tbody>
+					                	@foreach($groupe->etudiants as $etu)
+					                    <tr>
+					                        <td>{{$etu->nom}} {{$etu->prenom}}
+												<input name="etudient_id[]" type="hidden" value="{{$etu->id}}">
+												<input name="seance_id" type="hidden" value="1">
+											</td>
+					                        <td><div class="checkbox">
+													<label>
+														<input type="checkbox" name="presence[]" value="P">
+													</label>
+												</div>
+											</td>
+											<td><div class="checkbox">
+													<label>
+														<input type="checkbox" name="presence[]" value="A">
+													</label>
+												</div>
+											</td>
+					                    </tr>
+
+					                	@endforeach
+						            </tbody>
+						        </table>
+			            		<button type="submit" class=" btn btn-md-2 btn-primary"><i class="fa fa-check"></i> Valider<div class="ripple-container"></div></button>
+	        				</form>
 
 		            	</div>
 		            </div>

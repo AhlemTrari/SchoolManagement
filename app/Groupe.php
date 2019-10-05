@@ -15,4 +15,10 @@ class Groupe extends Model
     {
     	return $this->belongsToMany('App\Enseignant');
     }
+
+    public function modules()
+    {
+        return $this->belongsToMany('App\Module');
+    }
+
 }

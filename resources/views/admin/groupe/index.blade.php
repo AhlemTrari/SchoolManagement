@@ -163,11 +163,12 @@
 
                                                                 <fieldset class="form-group label-floating is-select">
                                                                     <label class="control-label">Module</label>
-                                                                    <select class="selectpicker form-control" name="module">
-                                                                        <option value="modul1">modul1</option>
-                                                                        <option value="modul2">By modul2</option>
-                                                                        <option value="modul3">modul3</option>
-                                                                        <option value="modul4">modul4</option>
+                                                                    <select class="selectpicker form-control" name="module_id">
+                                                                        @foreach($modules as $module)
+                                                                          <option value="{{$module->id}}">
+                                                                            {{$module->Libelle}}
+                                                                          </option>
+                                                                        @endforeach
                                                                     </select>
                                                                 </fieldset>
 
