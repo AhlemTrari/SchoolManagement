@@ -7,8 +7,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\support\Facades\DB;
 use App\Etudiant;
 use App\Groupe;
+use App\Module;
 use App\Enseignant;
 use App\EnseignantGroupe;
+use App\GroupeModule;
 
 class GroupeController extends Controller
 {
@@ -28,13 +30,14 @@ class GroupeController extends Controller
         $etudiants = DB::table('etudiants')->orderBy('nom', 'desc')->where('groupe_id',NULL)->get();
         $profs = Enseignant::all();
         $groupes = Groupe::all();
-
+        $modules = Module::all();
         
 
         return view('admin.groupe.index')->with([
             'etudiants' => $etudiants,
             'profs' => $profs,
             'groupes' => $groupes,
+            'modules' => $modules,
 
             ]);;
     }
@@ -116,11 +119,16 @@ class GroupeController extends Controller
         $groupe = Groupe::find($id);
 
         $enseignant_groupe = new EnseignantGroupe;
+        $groupes_modules = new GroupeModule;
 
         $enseignant_groupe->enseignant_id = $request->input('prof');
         $enseignant_groupe->module = $request->input('module');
         $enseignant_groupe->groupe_id = $id;
         $enseignant_groupe->save();
+
+        $groupes_modules->module_id = $request->input('module');
+        $groupes_modules->groupe_id = $id;
+        $groupes_modules->save();
 
         return redirect('admin/groupe');
     }

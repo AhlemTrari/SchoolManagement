@@ -14,7 +14,7 @@
 				<div class="ui-block-content">
 				<div class="container">
 				
-				
+					@foreach(Auth::user()->groupes as $groupe)
 						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 							<div class="ui-block">
 
@@ -24,92 +24,18 @@
 								<div class="birthday-item inline-items">
 									
 									<div class="birthday-author-name">
-										<a href="#" class="h6 author-name">Groupe:</a>
-										<div class="birthday-date">Module...</div>
+										<a href="#" class="h6 author-name">Groupe: {{$groupe->nom}}</a>
+										<div class="birthday-date">Module: @foreach( $groupe->modules as $module) {{$module->Libelle}} @endforeach</div>
 									</div>
-									<a href="" class="btn btn-sm bg-blue">Détails</a>
+									<a href="{{url('enseignant/groupe/'.$groupe->id.'/show')}}" class="btn btn-sm bg-blue">Détails</a>
 								</div>
 								
 								<!-- ... end Birthday Item -->
 
 							</div>
 						</div>
-						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<div class="ui-block">
-
-								
-								<!-- Birthday Item -->
-								
-								<div class="birthday-item inline-items">
-									
-									<div class="birthday-author-name">
-										<a href="#" class="h6 author-name">Groupe:</a>
-										<div class="birthday-date">Module...</div>
-									</div>
-									<a href="" class="btn btn-sm bg-blue">Détails</a>
-								</div>
-								
-								<!-- ... end Birthday Item -->
-
-							</div>
-						</div>
-						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<div class="ui-block">
-
-								
-								<!-- Birthday Item -->
-								
-								<div class="birthday-item inline-items">
-									
-									<div class="birthday-author-name">
-										<a href="#" class="h6 author-name">Groupe:</a>
-										<div class="birthday-date">Module...</div>
-									</div>
-									<a href="" class="btn btn-sm bg-blue">Détails</a>
-								</div>
-								
-								<!-- ... end Birthday Item -->
-
-							</div>
-						</div>
-						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<div class="ui-block">
-
-								
-								<!-- Birthday Item -->
-								
-								<div class="birthday-item inline-items">
-									
-									<div class="birthday-author-name">
-										<a href="#" class="h6 author-name">Groupe:</a>
-										<div class="birthday-date">Module...</div>
-									</div>
-									<a href="" class="btn btn-sm bg-blue">Détails</a>
-								</div>
-								
-								<!-- ... end Birthday Item -->
-
-							</div>
-						</div>
-						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<div class="ui-block">
-
-								
-								<!-- Birthday Item -->
-								
-								<div class="birthday-item inline-items">
-									
-									<div class="birthday-author-name">
-										<a href="#" class="h6 author-name">Groupe:</a>
-										<div class="birthday-date">Module...</div>
-									</div>
-									<a href="" class="btn btn-sm bg-blue">Détails</a>
-								</div>
-								
-								<!-- ... end Birthday Item -->
-
-							</div>
-						</div>
+					@endforeach
+						
 						
 					
 				</div>
@@ -557,12 +483,14 @@
 				<!-- W-Friend-Pages-Added -->
 				
 				<ul class="widget w-friend-pages-added notification-list friend-requests">
+					@foreach(Auth::user()->groupes as $groupe)
 					<li class="inline-items">
 						<div class="notification-event">
-							<a href="#" class="h6 notification-friend">groupe A5</a>
-							<span class="chat-message-item">Module</span>
+							<a href="#" class="h6 notification-friend">{{$groupe->nom}}</a>
+							<span class="chat-message-item">@foreach( $groupe->modules as $module) {{$module->Libelle}} @endforeach</span>
 						</div>				
-					</li>				
+					</li>
+					@endforeach				
 				</ul>
 				
 				<!-- .. end W-Friend-Pages-Added -->
