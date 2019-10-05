@@ -42,7 +42,7 @@ class AnonymatController extends Controller
             $paquet->Libelle = $request->input('Libelle');
             $paquet->save();
 
-            return redirect('anonymat/');
+            return redirect('anonymat');
 
          
     }
