@@ -69,35 +69,36 @@
                                 <div class="form-group label-floating is-empty">
                     <label class="control-label">Filière</label>
                   <input class="form-control" placeholder="" name="filiere" value="{{$groupe->filiere}}" type="text">
-                                                                        </div>
-                                                                        <div class="form-group label-floating is-empty">
-                                                                            <label class="control-label">Niveau</label>
-                                                                            <input class="form-control" name="niveau" value="{{$groupe->niveau}}" type="text">
-                                                                        </div>
-                                                                        <div class="form-group label-floating is-empty">
-                                                                        <label class="control-label">Etudiants <span class="text-danger">*</span></label> 
-                                                                            <select  name="etudiant[]" class=" selectpicker form-control" multiple required  data-max-options="20">
-                                                                              <option>
-                                                                                 @foreach ($groupe->etudiants as $etu) 
-                                                                                  <option value="{{$etu->id}}" selected>
-                                                                                      {{ $etu->nom }} {{ $etu->prenom }}
-                                                                                  </option>
-                                                                                @endforeach
-                                                                              </option>
-                                                                               @foreach($etudiants as $etudiant)
-                                                                              <option value="{{$etudiant->id}}">
-                                                                                {{$etudiant->nom}} {{$etudiant->prenom}}
-                                                                              </option>
-                                                                               @endforeach
-                                                                        </select>
-                                                                    </div>
+                                                     </div>
+                                                    <div class="form-group label-floating is-empty">
+                                                  <label class="control-label">Niveau</label>
+                     <input class="form-control" name="niveau" value="{{$groupe->niveau}}" type="text">
+                                             </div>
+                    <div class="form-group label-floating is-empty">
+                                <label class="control-label">Etudiants <span class="text-danger">*</span></label> 
+                            <select  name="etudiant[]" class=" selectpicker form-control" multiple required  data-max-options="20">
+                                             <option>
+                                   @foreach ($groupe->etudiants as $etu) 
+                                            <option value="{{$etu->id}}" selected>
+                                                             {{ $etu->nom }} {{ $etu->prenom }}
+                                                            </option>
+                                                           @endforeach
+                                                            </option>
+                                                            @foreach($etudiants as $etudiant)
+                                                        <option value="{{$etudiant->id}}">
+                                                        {{$etudiant->nom}} {{$etudiant->prenom}}
+                     </option>
+                                                        @endforeach
+                                                        </select>
+                                                        </div>
 
-                                                                    </fieldset>
-                                                                    <div class="row" style="padding-top: 30px; margin-left: 35%;">
-                                                                        <button class="close" type="button" data-dismiss="modal" aria-hidden="true"><i class="fa  fa-mail-reply"></i>Annuler &nbsp; &nbsp;
-                                                                        </button>
-                                                                        <button type="submit" class=" btn btn-lg btn-primary"><i class="fa fa-check"></i> Valider
-                                                                        </button> 
+                                                         </fieldset>
+                                                        <div class="row" style="padding-top: 30px; margin-left: 35%;">
+                                                        <button class="close" type="button" data-dismiss="modal" aria-hidden="true"><i class="fa  fa-mail-reply"></i>Annuler &nbsp; &nbsp;
+                                                            </button>
+                                                            
+                                            <button type="submit" class=" btn btn-lg btn-primary"><i class="fa fa-check"></i> Valider
+                                                        </button> 
                                                                     </div>
                                                                 </form>
                                                             </div>
@@ -153,11 +154,11 @@
                                                                 <fieldset class="form-group label-floating is-select">
                                                                     <label class="control-label">Enseigant</label>
                                                                     <select class="selectpicker form-control" name="prof">
-                                                                        @foreach($profs as $prof)
-                                                                          <option value="{{$prof->id}}">
-                                                                            {{$prof->nom}} {{$prof->prenom}}
-                                                                          </option>
-                                                                        @endforeach
+                                                            @foreach($profs as $prof)
+                                                         <option value="{{$prof->id}}">
+                                                         {{$prof->nom}} {{$prof->prenom}}
+                                                             </option>
+                                                             @endforeach
                                                                     </select>
                                                                 </fieldset>
 

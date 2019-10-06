@@ -21,4 +21,9 @@ class Groupe extends Model
         return $this->belongsToMany('App\Module');
     }
 
+        public function paquets()
+    {
+        return $this->belongsToMany('App\Paquet');
+    }
+
 }

@@ -38,19 +38,19 @@
                     <thead>
                         <tr>
                             <th>Libellé</th>
-                           
+                            <th>Module</th>                           
                             <th width="25%">Actions</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                         @foreach($paquets as $paquet)
-                        
+                        @foreach($paquets as $paquet) 
                         <tr>
-                            <td>{{$paquet->Libelle}}</td>
+                            <td>{{$paquet->libelle}}</td>
+                            <td>{{$paquet->module_id}}</td>
                             <th>
                                 <center>
-                                    <form action="" method="post">
+                                    <form action="{{ url('anonymat/'.$paquet->id)}}" method="post">
                                         <div class="row">
                                             <!-- affecter un enseigant -->
                                             <a href="" class="btn btn-control bg-green" data-toggle="modal" style="height:40px; width: 40px"><i class="fas fa-link"></i></a>
@@ -63,22 +63,22 @@
                                                         </a>
 
                                                         <div class="modal-header">
-                                                            <h6 class="title">Affecter un groupe à un enseignant</h6>
+                                                            <h6 class="title">Affecter un paquet à un enseignant</h6>
                                                         </div>
 
 
                                                         <div class="modal-body">
-                                                            <form class="resume-form" method="POST" action="" enctype="multipart/form-data">
-                                                                {{ csrf_field() }}  
-                                                                <fieldset class="form-group label-floating is-select">
-                                                                    <label class="control-label">Enseigant</label>
-                                                                    <!-- select -->
-                                                                </fieldset>
+                                    <form class="resume-form" method="POST" action="{{ url('anonymat'.$paquet->id)}}" enctype="multipart/form-data">
+                                    {{ csrf_field() }}  
+                                    <div class="form-group label-floating is-empty">
+                                <label class="control-label">Libelle</label>
+                                <input class="form-control" placeholder="" name="libelle" value="{{$paquet->libelle}}" type="text">
+                                         </div>
 
-                                                                <fieldset class="form-group label-floating is-select">
-                                                                    <label class="control-label">Module</label>
-                                                                    <select class="selectpicker form-control" name="module">
-                                                                        <option value="modul1">modul1</option>
+                                                        <fieldset class="form-group label-floating is-select">
+                                                        <label class="control-label">Module</label>
+                                                 <select class="selectpicker form-control" name="module">
+                                                        <option value="modul1">modul1</option>
                                                                         <option value="modul2">By modul2</option>
                                                                         <option value="modul3">modul3</option>
                                                                         <option value="modul4">modul4</option>
@@ -87,7 +87,7 @@
 
                                                                 <div class="row" style="padding-top: 30px; margin-left: 35%;">
                                                                   <button class="close" type="button" data-dismiss="modal" aria-hidden="true"><i class="fa  fa-mail-reply"></i>Annuler &nbsp; &nbsp;</button>
-                                                                   <button type="submit" class=" btn btn-lg btn-primary"><i class="fa fa-check"></i> Valider</button> 
+                                                         <button type="submit" class=" btn btn-lg btn-primary"><i class="fa fa-check"></i> Valider</button> 
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -100,8 +100,8 @@
                                 </center>
                             </th>
                         </tr>
-                       
-                      @endforeach  
+                       @endforeach
+                      
                     </tbody>
                 </table>
             </div>
@@ -124,28 +124,43 @@
 
                 <div class="edit-my-poll-content">
                 
-                    <form class="resume-form" method="POST" action="" enctype="multipart/form-data">
+                    <form class="resume-form" method="POST" action="{{url('anonymat/paquet')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <fieldset>
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label">Libellé <span class="text-danger">*</span></label>
-                                        <input class="form-control" placeholder="" value="" name="nom" type="text">
+                                        <input class="form-control" placeholder="" value="" name="libelle" type="text">
                                     </div>
-                                  <!--   <div class="form-group label-floating is-empty">
-                                        <label class="control-label">Module</label>
-                                        <input class="form-control" placeholder="" value="" name="filiere" type="text">
-                                    </div> -->
-                                   <!--  <div class="form-group label-floating is-empty">
-                                        <label class="control-label">Etudiants <span class="text-danger">*</span></label> 
-                                            <select  name="etudiant[]" class=" selectpicker form-control" multiple>
-                                              
-                                              
-                                              <option value="">
-                                                
-                                              </option>
-                                              
-                                        </select>
-                                    </div> -->
+                                    <div class="form-group label-floating is-empty">
+                                <label class="control-label">Module <span class="text-danger">*</span></label> 
+                            <select  name="module" class=" selectpicker form-control">
+                                             <option>
+                                   @foreach ($modules as $module) 
+                                            <option value="{{$module->id}}" selected>
+                                    {{ $module->Libelle }}
+                                                            </option>
+                                    @endforeach
+                                            </option>
+                                            
+                            </select>
+                                    </div>
+                                    <div class="form-group label-floating is-empty">
+                                <label class="control-label">Etudiants <span class="text-danger">*</span></label> 
+                            <select  name="etudiant[]" class=" selectpicker form-control" multiple required  data-max-options="20">
+                                             <option>
+                                   @foreach ($etudiants as $etu) 
+                                                            <option value="{{$etu->id}}">
+                                                             {{ $etu->nom }} {{ $etu->prenom }}
+                                                            </o ption>
+                                                           @endforeach
+                                                            </option>
+                                                            @foreach($etudiants as $etudiant)
+                                                        <option value="{{$etudiant->id}}">
+                                                        {{$etudiant->nom}} {{$etudiant->prenom}}
+                                                        </option>
+                                                        @endforeach
+                                                        </select>
+                                                        </div>
                         </fieldset>
                         <div class="row" style="padding-top: 30px; margin-left: 35%;">
                           <button class="close" type="button" data-dismiss="modal" aria-hidden="true"><i class="fa  fa-mail-reply"></i>Annuler &nbsp; &nbsp;</button>
@@ -164,7 +179,7 @@
 
                     <div class="tab-pane" id="presence">
                         <div class="ui-block">
-                            <h1>jjjjj</h1>
+                            <h1></h1>
                         </div>
                     </div>
                 </div>
