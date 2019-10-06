@@ -65,6 +65,9 @@
 			                	@foreach($exclus->unique('etudiant_id') as $exclu)
 			                    <tr>
 			                        <td>{{$exclu->etudiant->matricule}}</td>
+			                        <td>{{$exclu->etudiant->nom}}</td>
+			                        <td>{{$exclu->etudiant->prenom}}</td>
+			                        <td>{{$exclu->etudiant->date_naissance}}</td>
 			                    </tr>
 
 			                	@endforeach

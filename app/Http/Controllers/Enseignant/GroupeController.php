@@ -30,7 +30,7 @@ class GroupeController extends Controller
 
         $seances = Seance::All();
 
-        $exclus = DB::table('exclus')->where('module_id',Auth::user()->module_id)->get();
+        $exclus = Exclu::where('module_id',Auth::user()->module_id)->get();
     	$groupe = Groupe::find($id);
 
         return view('prof.groupes.show')->with([
