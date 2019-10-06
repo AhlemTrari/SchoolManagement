@@ -96,8 +96,8 @@
 				</li>
 				
 				<li>
-					<a href="#">
-						<img class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="EVENEMENTS" src="{{asset('assets/icons/calendar.png')}}">
+					<a href="{{url('admin/module')}}">
+						<img class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MODULES" src="{{asset('assets/icons/calendar.png')}}">
 					</a>
 				</li>
 				
@@ -150,9 +150,9 @@
 				</li>
 			
 				<li>
-					<a href="#">
-						<img class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="EVENEMENTS" src="{{asset('assets/icons/calendar.png')}}">
-						<span class="left-menu-title">Calendrier des évènements </span>
+					<a href="{{url('admin/module')}}">
+						<img class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MODULES" src="{{asset('assets/icons/calendar.png')}}">
+						<span class="left-menu-title">Modules </span>
 					</a>
 				</li>
 			</ul>
@@ -235,9 +235,9 @@
 				</li>
 			
 				<li>
-					<a href="#">
-						<img class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="EVENEMENTS" src="{{asset('assets/icons/calendar.png')}}">
-						<span class="left-menu-title">Calendrier des évènements</span>
+					<a href="{{url('admin/module')}}">
+						<img class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MODULES" src="{{asset('assets/icons/calendar.png')}}">
+						<span class="left-menu-title">Modules</span>
 					</a>
 				</li>
 				

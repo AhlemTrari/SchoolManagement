@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnMatriculeEtudiant extends Migration
+class CreateAbsencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AddColumnMatriculeEtudiant extends Migration
      */
     public function up()
     {
-        Schema::table('etudiants', function (Blueprint $table) {
-            $table-> string('matricule')->nullable()->after('id');
+        Schema::create('absences', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('etudiant_id')->unsigned();
+            $table->integer('seance_id')->unsigned();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ class AddColumnMatriculeEtudiant extends Migration
      */
     public function down()
     {
-        Schema::table('etudiants', function (Blueprint $table) {
-            $table->dropColumn('matricule');
-        });
+        Schema::dropIfExists('absences');
     }
 }

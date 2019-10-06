@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnModuleEnseignantGroupe extends Migration
+class AddColumnModuleIdAbsences extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddColumnModuleEnseignantGroupe extends Migration
      */
     public function up()
     {
-        Schema::table('enseignant_groupe', function (Blueprint $table) {
-            $table-> string('module')->nullable();
+        Schema::table('absences', function (Blueprint $table) {
+            $table->integer('module_id')->unsigned();
         });
     }
 
@@ -25,8 +25,8 @@ class AddColumnModuleEnseignantGroupe extends Migration
      */
     public function down()
     {
-        Schema::table('enseignant_groupe', function (Blueprint $table) {
-            $table->dropColumn('module');
+        Schema::table('absences', function (Blueprint $table) {
+            //
         });
     }
 }

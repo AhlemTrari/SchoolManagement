@@ -28,8 +28,8 @@ class Enseignant extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function groupes()
+    public function module()
     {
-        return $this->belongsToMany('App\Groupe');
+        return $this->belongsTo('App\Module','module_id');
     }
 }

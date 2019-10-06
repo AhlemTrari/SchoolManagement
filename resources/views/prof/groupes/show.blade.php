@@ -12,7 +12,7 @@
 						</div>
 
 						<div class="col-6">
-						<p class="text-left">Module: @foreach( $groupe->modules as $module) {{$module->Libelle}} @endforeach</p>
+						<p class="text-left">Module: {{Auth::user()->module->Libelle}} </p>
 						</div>
 
 					</div>
@@ -62,12 +62,9 @@
 			                    </tr>
 			                </thead>
 			                <tbody>
-			                	@foreach($groupe->etudiants as $etu)
+			                	@foreach($exclus->unique('etudiant_id') as $exclu)
 			                    <tr>
-			                        <td>{{$etu->matricule}}</td>
-			                        <td>{{$etu->nom}}</td>
-			                        <td>{{$etu->prenom}}</td>
-			                        <td>{{$etu->date_naissance}}</td>
+			                        <td>{{$exclu->etudiant->matricule}}</td>
 			                    </tr>
 
 			                	@endforeach
@@ -80,6 +77,13 @@
 		            	<div class="u">
             				<form method="POST" action="{{url('enseignant/groupe/presence')}}" class="comment-form inline-item">
             					{{ csrf_field() }}
+            					<select name="seance_id">
+            						@foreach($groupe->seances as $seance)
+            						<option value="{{$seance->id}}">{{ $seance->jour}}  {{ $seance->heure}}</option>
+
+            						@endforeach
+            					</select>
+            					<br/><br/>
 			            		<table id="datatable-buttons" class="table">
 					                <thead>
 					                    <tr>
@@ -93,7 +97,7 @@
 					                    <tr>
 					                        <td>{{$etu->nom}} {{$etu->prenom}}
 												<input name="etudient_id[]" type="hidden" value="{{$etu->id}}">
-												<input name="seance_id" type="hidden" value="1">
+												<!-- <input name="seance_id" type="hidden" value="$seance->id}}"> -->
 											</td>
 					                        <td><div class="checkbox">
 													<label>
@@ -124,7 +128,29 @@
 		     		 </div>
 
 		     		 <div class="tab-pane " id="exclus">
-		              CCC
+		              <div class="">
+		              	<table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
+			                <thead>
+			                    <tr>
+			                        <th>Matricule</th>
+			                        <th>Nom</th>
+			                        <th>Prénom</th>
+			                        <th>Date de naissance</th>
+			                    </tr>
+			                </thead>
+			                <tbody>
+			                	@foreach($groupe->etudiants as $etu)
+			                    <tr>
+			                        <td>{{$etu->matricule}}</td>
+			                        <td>{{$etu->nom}}</td>
+			                        <td>{{$etu->prenom}}</td>
+			                        <td>{{$etu->date_naissance}}</td>
+			                    </tr>
+
+			                	@endforeach
+			            	</tbody>
+			        	</table>
+		              </div>
 		     		 </div>
 
 		        </div>

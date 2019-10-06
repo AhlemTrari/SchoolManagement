@@ -29,6 +29,17 @@ class Etudiant extends Authenticatable
 
     public function groupe()
     {
-        return $this->belongsTo('App\Groupe');
+        return $this->belongsTo('App\Groupe','groupe_id');
+    }
+
+    
+    public function absences()
+    {
+    	return $this->hasMany('App\Absence');
+    }
+
+    public function exclus()
+    {
+        return $this->hasMany('App\Exclu');
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Excel;
 use App\Enseignant;
+use App\Module;
 
 class EnseignantController extends Controller
 {
@@ -18,8 +19,10 @@ class EnseignantController extends Controller
 	public function index()
     {
         $profs = Enseignant::all();
+        $modules = Module::all();
          return view('admin.prof.index')->with([
             'profs' => $profs,
+            'modules' => $modules,
             ]);
     }
 
@@ -43,7 +46,9 @@ class EnseignantController extends Controller
             $prof->password = Hash::make($request->input('password'));
             $prof->dept_id = '1';
             $prof->num_tel = $request->input('num_tel');
+            $prof->module_id = $request->input('module_id');
             $prof->photo = 'uploads/photo/'.$file_name;
+
 
             $prof->save();
 

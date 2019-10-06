@@ -18,8 +18,8 @@ class CreateSeancesTable extends Migration
             $table->string('jour')->nullable();
             $table->string('heure')->nullable();
             $table->integer('module_id')->unsigned();
+            $table->integer('groupe_id')->unsigned();
 
-            $table-> foreign('module_id')->references('id')->on('modules')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -23,6 +23,10 @@ class CreateEnseignantsTable extends Migration
             $table->rememberToken();
             $table->string('password')->nullable();
             $table->string('num_tel')->nullable();
+            $table->string('grade')->nullable();
+            $table->integer('dept_id')->nullable()->unsigned();
+            $table->integer('module_id')->nullable()->unsigned();
+
             //$table->boolean('chef_matiere')->nullable()->default(false);
             $table->timestamps();
         });

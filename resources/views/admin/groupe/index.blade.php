@@ -135,53 +135,77 @@
                                             <!-- affecter un enseigant -->
                                             <a href="#link_groupe{{ $groupe->id }}Modal" class="btn btn-control bg-green" data-toggle="modal" style="height:40px; width: 40px"><i class="fas fa-link"></i></a>
                                             <!-- modal -->
-                                            <div class="modal fade" id="link_groupe{{ $groupe->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="link_groupe{{ $groupe->id }}ModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog window-popup edit-widget edit-widget-blog-post" role="document">
+                                            <div class="modal fade" role="dialog"  aria-hidden="true"  id="link_groupe{{ $groupe->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="link_groupe{{ $groupe->id }}ModalLabel">
+                                                <div class="modal-dialog window-popup edit-my-poll-popup" role="document">
                                                     <div class="modal-content">
-                                                        <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
-                                                            <svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
-                                                        </a>
-
-                                                        <div class="modal-header">
-                                                            <h6 class="title">Affecter un groupe à un enseignant</h6>
-                                                        </div>
-
 
                                                         <div class="modal-body">
-                                                            <form class="resume-form" method="POST" action="{{url('admin/groupe/'.$groupe->id.'/affecter')}}" enctype="multipart/form-data">
-                                                                {{ csrf_field() }}  
-                                                                <fieldset class="form-group label-floating is-select">
-                                                                    <label class="control-label">Enseigant</label>
-                                                                    <select class="selectpicker form-control" name="prof">
-                                                                        @foreach($profs as $prof)
-                                                                          <option value="{{$prof->id}}">
-                                                                            {{$prof->nom}} {{$prof->prenom}}
-                                                                          </option>
-                                                                        @endforeach
-                                                                    </select>
-                                                                </fieldset>
 
-                                                                <fieldset class="form-group label-floating is-select">
-                                                                    <label class="control-label">Module</label>
-                                                                    <select class="selectpicker form-control" name="module_id">
-                                                                        @foreach($modules as $module)
-                                                                          <option value="{{$module->id}}">
-                                                                            {{$module->Libelle}}
-                                                                          </option>
-                                                                        @endforeach
-                                                                    </select>
-                                                                </fieldset>
-
-                                                                <div class="row" style="padding-top: 30px; margin-left: 35%;">
-                                                                  <button class="close" type="button" data-dismiss="modal" aria-hidden="true"><i class="fa  fa-mail-reply"></i>Annuler &nbsp; &nbsp;</button>
-                                                                   <button type="submit" class=" btn btn-lg btn-primary"><i class="fa fa-check"></i> Valider</button> 
+                                                            <div class="edit-my-poll-head bg-primary">
+                                                                <div class="head-content">
+                                                                    <h2 class="title">Affecter un groupe à un enseignant</h2>
                                                                 </div>
-                                                            </form>
+                                                            </div>
+
+                                                            <div class="edit-my-poll-content">
+                                                            
+                                                                <form class="resume-form" method="POST" action="{{url('admin/groupe/'.$groupe->id.'/affecter')}}" enctype="multipart/form-data">
+                                                                    {{ csrf_field() }}
+                                                                    <fieldset>
+                                                                        <label >Enseigant<span class="text-danger">*</span></label>
+                                                                        <div class="form-group label-floating is-empty"> 
+                                                                        <select class="selectpicker form-control" name="prof">
+                                                                            @foreach($profs as $prof)
+                                                                              <option value="{{$prof->id}}">
+                                                                                {{$prof->nom}} {{$prof->prenom}}
+                                                                              </option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
+                                                                   
+
+                                                                    <div class="form-group label-floating is-empty">
+                                                                        <label>Séances <span class="text-danger">*</span></label> 
+                                                                        <div class="row">
+                                                                        
+                                                                        <div class="col-md-4">
+                                                                            <select  name="jour" class="selectpicker form-control">
+                                                                              <option> Dimanche </option>
+                                                                              <option> Lundi </option>
+                                                                              <option> Mardi </option>
+                                                                              <option> Mercredi </option>
+                                                                              <option> Jeudi </option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-1"></div>
+                                                                        <div class="col-md-4">
+
+                                                                            <select  name="heure" class="selectpicker form-control">
+                                                                              <option> 08:30 </option>
+                                                                              <option> 10:00 </option>
+                                                                              <option> 11:30 </option>
+                                                                              <option> 13:30 </option>
+                                                                              <option> 15:00 </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                   
+                                                                    
+                                                                    </div>        
+                                                                    </fieldset>
+                                                                    <div class="row" style="padding-top: 30px; margin-left: 35%;">
+                                                                      <button class="close" type="button" data-dismiss="modal" aria-hidden="true"><i class="fa  fa-mail-reply"></i>Annuler &nbsp; &nbsp;</button>
+                                                                       <button type="submit" class=" btn btn-lg btn-primary"><i class="fa fa-check"></i> Valider</button> 
+                                                                    </div>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!-- end affecter -->
+
+
 
                                             <!-- deaffecter un enseigant -->
                                             <a href="#unlink_groupe" class="btn btn-control bg-grey" data-toggle="modal" style="height:40px; width: 40px"><i class="fas fa-unlink"></i></a>
@@ -203,9 +227,7 @@
 <div class="modal fade" id="nv_groupe" tabindex="-1" role="dialog" aria-labelledby="edit-my-poll-popup" aria-hidden="true">
     <div class="modal-dialog window-popup edit-my-poll-popup" role="document">
         <div class="modal-content">
-            <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
-                <svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
-            </a>
+
             <div class="modal-body">
 
                 <div class="edit-my-poll-head bg-primary">

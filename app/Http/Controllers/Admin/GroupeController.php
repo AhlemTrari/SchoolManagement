@@ -9,8 +9,8 @@ use App\Etudiant;
 use App\Groupe;
 use App\Module;
 use App\Enseignant;
-use App\EnseignantGroupe;
-use App\GroupeModule;
+use App\Seance;
+use App\ModuleGroupe;
 
 class GroupeController extends Controller
 {
@@ -115,20 +115,23 @@ class GroupeController extends Controller
     }
 
     public function affecter(Request $request, $id)
-    {
-        $groupe = Groupe::find($id);
+    {  
 
-        $enseignant_groupe = new EnseignantGroupe;
-        $groupes_modules = new GroupeModule;
+        $profid=$request->input('prof');
+        $prof = Enseignant::find($profid);
+        $seance= new Seance();
+        $seance->jour=$request->input('jour');
+        $seance->heure=$request->input('heure');
+        $seance->groupe_id=$id;
+        $seance->module_id=$prof->module_id;
+        $mgrp= New ModuleGroupe();
+        $mgrp->groupe_id=$id;
+        $mgrp->module_id=$prof->module_id;
 
-        $enseignant_groupe->enseignant_id = $request->input('prof');
-        $enseignant_groupe->module = $request->input('module');
-        $enseignant_groupe->groupe_id = $id;
-        $enseignant_groupe->save();
-
-        $groupes_modules->module_id = $request->input('module');
-        $groupes_modules->groupe_id = $id;
-        $groupes_modules->save();
+        
+   
+        $mgrp->save();
+        $seance->save();
 
         return redirect('admin/groupe');
     }

@@ -16,6 +16,7 @@ class CreatePaquetsTable extends Migration
         Schema::create('paquets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Libelle')->nullable();
+            $table->integer('module_id')->nullable()->unsigned();
             $table->timestamps();
         });
     }

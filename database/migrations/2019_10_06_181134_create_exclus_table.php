@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnPhotoEtudiant extends Migration
+class CreateExclusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AddColumnPhotoEtudiant extends Migration
      */
     public function up()
     {
-        Schema::table('etudiants', function (Blueprint $table) {
-            $table-> string('photo')->nullable()->after('password');
+        Schema::create('exclus', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('etudiant_id')->nullable()->unsigned();
+            $table->integer('module_id')->nullable()->unsigned();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ class AddColumnPhotoEtudiant extends Migration
      */
     public function down()
     {
-        Schema::table('etudiants', function (Blueprint $table) {
-            $table->dropColumn('photo');
-        }); 
+        Schema::dropIfExists('exclus');
     }
 }

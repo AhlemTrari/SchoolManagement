@@ -20,6 +20,9 @@ class CreateEtudiantsTable extends Migration
             $table->date('date_naissance')->nullable();
             $table->string('email')->unique();
             $table->string('password')->nullable();
+            $table->string('photo')->nullable();
+            $table->string('matricule')->nullable();
+            $table->integer('groupe_id')->nullable()->unsigned();
             $table->rememberToken();
             $table->timestamps();
         });

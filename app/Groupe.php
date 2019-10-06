@@ -18,7 +18,19 @@ class Groupe extends Model
 
     public function modules()
     {
-        return $this->belongsToMany('App\Module');
+        return $this->belongsToMany('App\Module','module_groupes');
     }
+
+
+public function module_groupes()
+{
+    return $this->hasMany('App\ModuleGroupe');
+}
+
+    public function seances()
+    {
+        return $this->hasMany('App\Seance');
+    }
+
 
 }

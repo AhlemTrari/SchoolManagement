@@ -14,7 +14,7 @@
 				<div class="ui-block-content">
 				<div class="container">
 				
-					@foreach(Auth::user()->groupes as $groupe)
+					@foreach(Auth::user()->module->module_groupes->unique('groupe_id') as $module_groupes)
 						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 							<div class="ui-block">
 
@@ -24,10 +24,10 @@
 								<div class="birthday-item inline-items">
 									
 									<div class="birthday-author-name">
-										<a href="#" class="h6 author-name">Groupe: {{$groupe->nom}}</a>
-										<div class="birthday-date">Module: @foreach( $groupe->modules as $module) {{$module->Libelle}} @endforeach</div>
+										<a href="#" class="h6 author-name">Groupe: {{$module_groupes->groupe->nom}}</a>
+										<div class="birthday-date">Module: {{$module_groupes->module->Libelle}} </div>
 									</div>
-									<a href="{{url('enseignant/groupe/'.$groupe->id.'/show')}}" class="btn btn-sm bg-blue">Détails</a>
+									<a href="{{url('enseignant/groupe/'.$module_groupes->groupe->id.'/show')}}" class="btn btn-sm bg-blue">Détails</a>
 								</div>
 								
 								<!-- ... end Birthday Item -->
@@ -483,11 +483,11 @@
 				<!-- W-Friend-Pages-Added -->
 				
 				<ul class="widget w-friend-pages-added notification-list friend-requests">
-					@foreach(Auth::user()->groupes as $groupe)
+					@foreach(Auth::user()->module->module_groupes->unique('groupe_id') as $module_groupes)
 					<li class="inline-items">
 						<div class="notification-event">
-							<a href="#" class="h6 notification-friend">{{$groupe->nom}}</a>
-							<span class="chat-message-item">@foreach( $groupe->modules as $module) {{$module->Libelle}} @endforeach</span>
+							<a href="#" class="h6 notification-friend">{{$module_groupes->groupe->nom}}</a>
+							<span class="chat-message-item"> </span>
 						</div>				
 					</li>
 					@endforeach				
