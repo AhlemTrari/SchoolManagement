@@ -31,4 +31,9 @@ class Etudiant extends Authenticatable
     {
         return $this->belongsTo('App\Groupe');
     }
+
+    public function paquets()
+    {
+        return $this->belongsToMany('App\Paquet');
+    }   
 }

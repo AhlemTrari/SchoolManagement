@@ -10,8 +10,8 @@ class Paquet extends Model
     {
         return $this->belongsTo('App\Module');
     }
-   public function groupes()
+   public function etudiants()
     {
-        return $this->belongsToMany('App\Groupe');
+        return $this->belongsToMany('App\Etudiant');
     }
 }

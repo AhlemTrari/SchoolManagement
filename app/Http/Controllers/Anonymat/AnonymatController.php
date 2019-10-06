@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Paquet;
 use App\Module;
-use App\Groupe;
 use App\Etudiant;
+use App\EtudiantPaquet;
 
 class AnonymatController extends Controller
 {
@@ -33,14 +33,12 @@ class AnonymatController extends Controller
         $paquets = Paquet::all();
         $modules = Module::all();
         $etudiants = Etudiant::all();
-        $groupes = Groupe::all();
          return view('anonymat.accueil')->with([
             'paquets' => $paquets,
             'modules' => $modules , 
             'etudiants' => $etudiants,
-            'groupes' => $groupes,
             ]);
-        $etudiants = DB::table('etudiants')->orderBy('nom', 'desc')->where('groupe_id',NULL)->get();
+        $etudiants = DB::table('etudiants')->orderBy('nom', 'desc')->get();
 
 
     }
@@ -57,11 +55,15 @@ class AnonymatController extends Controller
             foreach ($etudiants as $key => $value) {
 
             $etudiant = Etudiant::find($value);
-            $etudiant->groupe_id = $request->input('groupe_id');;
             $etudiant->save();
-         }
+         }  $paquet->save();
 
-            $paquet->save();
+        $etudiant_paquet = new EtudiantPaquet();
+        
+            $etudiant_paquet->etudiant_id =   $request->input('etudiant_id');  
+            $etudiant_paquet->paquet_id =   $request->input('paquet_id');  
+
+            $etudiant_paquet->save();
 
 
             return back();
