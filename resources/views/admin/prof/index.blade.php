@@ -213,6 +213,17 @@
 									<label class="control-label">Numéro de téléphone</label>
 									<input class="form-control" type="text" name="num_tel">
 								</div>
+
+								<div class="form-group label-floating is-select">
+				                    <label class="control-label">Module<span class="text-danger">*</span></label>
+				                    <select name="module_id" class="selectpicker form-control" required>
+				                    	@foreach ($modules as $module)
+			                            <option value="{{$module->id}}">{{$module->Libelle}}</option>
+			                            @endforeach
+			                        </select>
+				                  </div>
+
+
 								<div class="form-group label-floating is-empty">
 									<center>
 										<div style="width: 50%" class="file-upload">

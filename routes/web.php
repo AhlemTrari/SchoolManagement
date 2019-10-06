@@ -80,6 +80,12 @@ Route::prefix('admin')->group(function() {
 	Route::delete('/groupe/{id}','Admin\GroupeController@destroy');
 	Route::post('/groupe/{id}/affecter','Admin\GroupeController@affecter');
 
+	//Module CRUD
+
+	Route::get('/module','Admin\ModuleController@index');
+	Route::post('/module','Admin\ModuleController@store');
+	Route::delete('/module/{id}','Admin\ModuleController@destroy');
+
 
 });
 	# <!-- end espaceAdmin -->
