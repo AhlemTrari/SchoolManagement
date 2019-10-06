@@ -62,7 +62,7 @@ class AnonymatController extends Controller
         
             $etudiant_paquet->etudiant_id =   $request->input('etudiant_id');  
             $etudiant_paquet->paquet_id =   $request->input('paquet_id');  
-
+            
             $etudiant_paquet->save();
 
 
